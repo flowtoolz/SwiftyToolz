@@ -64,8 +64,7 @@
 				9E68B605208BD0C4001F8DEA /* String+Flowtoolz.swift */,
 				9E68B606208BD0C4001F8DEA /* SwiftHelpers.swift */,
 			);
-			name = Code;
-			path = ../Code;
+			path = Code;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
