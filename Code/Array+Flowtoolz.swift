@@ -7,14 +7,9 @@ public extension Array
     
     mutating func limit(toCount limit: Int)
     {
-        guard limit > -1 else
-        {
-            return
-        }
-        
-        let currentCount = count
-        
-        let toRemove = currentCount - limit
+        guard limit > -1 else { return }
+
+        let toRemove = count - limit
         
         if toRemove > 0
         {
@@ -24,7 +19,7 @@ public extension Array
     
     mutating func moveElement(from: Int, to: Int) -> Bool
     {
-        guard from >= 0, from < count, to >= 0, to < count else
+        guard isValid(index: from), isValid(index: to) else
         {
             return false
         }
@@ -32,5 +27,12 @@ public extension Array
         insert(remove(at: from), at: to)
         
         return true
+    }
+    
+    func isValid(index: Int?) -> Bool
+    {
+        guard let index = index else { return false }
+        
+        return index >= 0 && index < count
     }
 }
