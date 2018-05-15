@@ -1,10 +1,3 @@
-public protocol MessageLogger: AnyObject
-{
-    func log(error: String)
-    func log(warning: String)
-    func log(_ message: String)
-}
-
 public extension MessageLogger
 {
     func log(error: String)
@@ -27,6 +20,13 @@ public extension MessageLogger
                                       message: message,
                                       type: .info)
     }
+}
+
+public protocol MessageLogger: AnyObject
+{
+    func log(error: String)
+    func log(warning: String)
+    func log(_ message: String)
 }
 
 public class MessageLog
