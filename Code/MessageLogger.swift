@@ -1,74 +1,101 @@
-public extension MessageLogger
+public func log(error: String, file: String = #file, line: Int = #line)
 {
-    func log(error: String)
+    Log.shared.log(message: error,
+                   level: .error,
+                   file: file,
+                   line: line)
+}
+
+public func log(warning: String, file: String = #file, line: Int = #line)
+{
+    Log.shared.log(message: warning,
+                   level: .warning,
+                   file: file,
+                   line: line)
+}
+
+public func log(_ message: String, file: String = #file, line: Int = #line)
+{
+    Log.shared.log(message: message,
+                   level: .info,
+                   file: file,
+                   line: line)
+}
+
+public extension Logger
+{
+    func log(error: String, file: String = #file, line: Int = #line)
     {
-        MessageLog.sharedInstance.log(sender: self,
-                                      message: error,
-                                      type: .error)
+        Log.shared.log(sender: self,
+                       message: error,
+                       level: .error,
+                       file: file,
+                       line: line)
     }
     
-    func log(warning: String)
+    func log(warning: String, file: String = #file, line: Int = #line)
     {
-        MessageLog.sharedInstance.log(sender: self,
-                                      message: warning,
-                                      type: .warning)
+        Log.shared.log(sender: self,
+                       message: warning,
+                       level: .warning,
+                       file: file,
+                       line: line)
     }
     
-    func log(_ message: String)
+    func log(_ message: String, file: String = #file, line: Int = #line)
     {
-        MessageLog.sharedInstance.log(sender: self,
-                                      message: message,
-                                      type: .info)
+        Log.shared.log(sender: self,
+                       message: message,
+                       level: .info,
+                       file: file,
+                       line: line)
     }
 }
 
-public protocol MessageLogger: AnyObject
+public protocol Logger
 {
-    func log(error: String)
-    func log(warning: String)
-    func log(_ message: String)
+    func log(error: String, file: String, line: Int)
+    func log(warning: String, file: String, line: Int)
+    func log(_ message: String, file: String, line: Int)
 }
 
-public class MessageLog
+public class Log
 {
     // MARK: - Singleton Access
     
-    public static let sharedInstance = MessageLog()
+    public static let shared = Log()
     
     private init() {}
     
     // MARK: - Logging
     
-    public func log(sender: AnyObject?, message: String, type: LogMessageType)
+    public func log(sender: Any? = nil,
+                    message: String,
+                    level: Level = .info,
+                    file: String = #file,
+                    line: Int = #line)
     {
-        var logString = typeName(of: sender)
+        var logString = sender != nil ? typeName(of: sender) : ""
         
-        if type != .info
+        if level != .info
         {
-            logString += " " + type.rawValue.uppercased()
+            if logString.count > 0 { logString += " " }
+            
+            logString += level.rawValue.uppercased()
         }
         
-        logString += ": " + message
+        if logString.count > 0 { logString += ": " }
+        
+        logString += message
+        
+        let filename = file.components(separatedBy: "/").last ?? file
+        
+        logString += " (\(filename) at line \(line))"
         
         print(logString)
-        
-        self.delegate?.messageLogReceived(message: logString, of: type)
     }
     
-    // MARK: - Delegate
+    // MARK: - Log Levels
     
-    public weak var delegate: MessageLogDelegate?
-}
-
-public protocol MessageLogDelegate: AnyObject
-{
-    func messageLogReceived(message: String,
-                            of type: LogMessageType)
-}
-
-public enum LogMessageType: String
-{
-    case info = "Info"
-    case warning = "Warning"
-    case error = "Error"
+    public enum Level: String { case info, warning, error }
 }
