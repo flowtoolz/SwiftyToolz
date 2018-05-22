@@ -19,7 +19,7 @@ public extension Array
     
     mutating func moveElement(from: Int, to: Int) -> Bool
     {
-        guard isValid(index: from), isValid(index: to) else
+        guard from != to, isValid(index: from), isValid(index: to) else
         {
             return false
         }
