@@ -1,3 +1,4 @@
+// FIXME: this does not work as expected on macOS
 public func typeName(of anything: Any?) -> String
 {
     return String(describing: anything.self)
