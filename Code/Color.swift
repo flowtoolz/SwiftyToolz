@@ -1,7 +1,7 @@
 public extension Color
 {
-    static let black = gray(brightness: 0)
-    static let white = gray(brightness: 1)
+    static var black: Color { return .gray(brightness: 0) }
+    static var white: Color { return .gray(brightness: 1) }
     
     static func gray(brightness: Float) -> Color
     {
