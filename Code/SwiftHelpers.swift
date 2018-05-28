@@ -1,7 +1,6 @@
-// FIXME: this does not work as expected on macOS
-public func typeName(of anything: Any?) -> String
+public func typeName<T>(of anything: T) -> String
 {
-    return String(describing: anything.self)
+    return String(describing: type(of: anything))
 }
 
 public typealias JSON = [String : Any]
