@@ -2,7 +2,14 @@ public extension Array
 {
     mutating func remove(where shouldRemove: (Element) -> Bool)
     {
-        self = self.filter { !shouldRemove($0) }
+        var index = count - 1
+        
+        while index >= 0
+        {
+            if shouldRemove(self[index]) { remove(at: index) }
+            
+            index -= 1
+        }
     }
     
     mutating func limit(toCount limit: Int)

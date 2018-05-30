@@ -2,7 +2,10 @@ public extension Dictionary
 {
     mutating func remove(where shouldRemove: (Value) -> Bool )
     {
-        self = self.filter { !shouldRemove($0.value) }
+        for (key, value) in self
+        {
+            if shouldRemove(value) { self[key] = nil }
+        }
     }
     
     // MARK: - Merge Dictionaries
