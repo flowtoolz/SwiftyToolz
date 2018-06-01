@@ -135,8 +135,10 @@ public class Log
             case .info: return 0
             case .warning: return 1
             case .error: return 2
+            case .off: return 3
             }
         }
-        case info, warning, error
+        
+        case info, warning, error, off
     }
 }
