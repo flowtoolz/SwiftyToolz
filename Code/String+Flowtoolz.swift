@@ -9,4 +9,11 @@ public extension String
         
         self = string
     }
+
+    init(unicode: Int)
+    {
+        var unicodeCharacter = unichar(unicode)
+        
+        self = String(utf16CodeUnits: &unicodeCharacter, count: 1)
+    }
 }
