@@ -102,7 +102,7 @@ public class Log
     {
         guard level.integer >= minimumLevel.integer else { return }
         
-        var logString = sender != nil ? typeName(of: sender) : ""
+        var logString = sender != nil ? typeName(sender) : ""
         
         if level != .info
         {
