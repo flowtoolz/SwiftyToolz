@@ -96,6 +96,18 @@ public extension Tree
     
     // MARK: - Branches
     
+    public var numberOfBranchesRecursively: Int
+    {
+        var branchNumber = 0
+        
+        for branch in branches
+        {
+            branchNumber += branch.numberOfBranchesRecursively
+        }
+        
+        return branchNumber + 1
+    }
+    
     func recoverRoots()
     {
         for branch in branches
