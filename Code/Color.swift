@@ -7,6 +7,14 @@ public extension Color
     {
         return Color(brightness, brightness, brightness)
     }
+    
+    func with(alpha: Float) -> Color
+    {
+        var color = self
+        color.alpha = alpha
+        
+        return color
+    }
 }
 
 public struct Color: Codable, Equatable
