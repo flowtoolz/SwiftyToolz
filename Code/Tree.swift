@@ -148,6 +148,7 @@ public extension Tree
     }
     
     var indexInRoot: Int? { return root?.index(of: self) }
+    var isLeaf: Bool { return branches.count == 0 }
     var hasBranches: Bool { return branches.count > 0 }
     var numberOfBranches: Int { return branches.count }
 }
