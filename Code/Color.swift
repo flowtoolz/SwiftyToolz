@@ -2,6 +2,7 @@ public extension Color
 {
     static var black: Color { return .gray(brightness: 0) }
     static var white: Color { return .gray(brightness: 1) }
+    static var clear: Color { return Color(0.0, 0.0, 0.0, 0.0) }
     
     static func gray(brightness: Float) -> Color
     {
