@@ -34,55 +34,6 @@ public func log(_ message: String,
                    line: line)
 }
 
-public extension Logger
-{
-    func log(error: String,
-             file: String = #file,
-             function: String = #function,
-             line: Int = #line)
-    {
-        Log.shared.log(sender: self,
-                       message: error,
-                       level: .error,
-                       file: file,
-                       function: function,
-                       line: line)
-    }
-    
-    func log(warning: String,
-             file: String = #file,
-             function: String = #function,
-             line: Int = #line)
-    {
-        Log.shared.log(sender: self,
-                       message: warning,
-                       level: .warning,
-                       file: file,
-                       function: function,
-                       line: line)
-    }
-    
-    func log(_ message: String,
-             file: String = #file,
-             function: String = #function,
-             line: Int = #line)
-    {
-        Log.shared.log(sender: self,
-                       message: message,
-                       level: .info,
-                       file: file,
-                       function: function,
-                       line: line)
-    }
-}
-
-public protocol Logger
-{
-    func log(error: String, file: String, function: String, line: Int)
-    func log(warning: String, file: String, function: String, line: Int)
-    func log(_ message: String, file: String, function: String, line: Int)
-}
-
 public class Log
 {
     // MARK: - Singleton Access
@@ -93,8 +44,7 @@ public class Log
     
     // MARK: - Logging
     
-    public func log(sender: Any? = nil,
-                    message: String,
+    public func log(message: String,
                     level: Level = .info,
                     file: String = #file,
                     function: String = #function,
@@ -102,7 +52,7 @@ public class Log
     {
         guard level.integer >= minimumLevel.integer else { return }
         
-        var logString = sender != nil ? typeName(sender) : ""
+        var logString = ""
         
         if level != .info
         {
