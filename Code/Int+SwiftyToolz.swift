@@ -1,16 +1,16 @@
 public extension Int
 {
-    public static func random(max: UInt32 = UInt32.max - 1) -> Int
+    public static func random(max: Int = .max) -> Int
     {
-        return Int(arc4random_uniform(max + 1))
+        return Int.random(in: 0 ... max)
     }
 }
 
 public extension UInt8
 {
-    public static func random(max: UInt8 = .max) -> UInt8
+    public static var random: UInt8
     {
-        return UInt8(arc4random_uniform(UInt32(max) + 1))
+        return UInt8.random(in: 0 ... .max)
     }
 }
 

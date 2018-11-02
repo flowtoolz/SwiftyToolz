@@ -23,7 +23,7 @@ public extension String
         
         var bytes = [Byte]()
         
-        for _ in 0 ..< 16 { bytes.append(Byte.random()) }
+        for _ in 0 ..< 16 { bytes.append(Byte.random) }
         
         // indicate UUID version and variant
         
