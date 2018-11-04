@@ -16,6 +16,11 @@ public extension Color
         
         return color
     }
+    
+    enum System
+    {
+        case text, label, red, orange, yellow, green, blue, purple
+    }
 }
 
 public struct Color: Codable, Equatable
