@@ -17,7 +17,7 @@ public extension String
         self = String(utf16CodeUnits: &unicodeCharacter, count: 1)
     }
     
-    public static var uuid: String
+    public static func makeUUID() -> String
     {
         // create random bytes
         
