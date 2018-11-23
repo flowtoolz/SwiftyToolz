@@ -2,9 +2,9 @@
     
     # meta infos
     s.name             = "SwiftyToolz"
-    s.version          = "1.1.0"
-    s.summary          = "Some Basic Swift Tools"
-    s.description      = "Some Basic Reusable Tools for Pure Swift"
+    s.version          = "1.2.0"
+    s.summary          = "Swift Code by Flowtoolz"
+    s.description      = "Swift Code by Flowtoolz. Visit https://github.com/flowtoolz for more."
     s.homepage         = "http://flowtoolz.com"
     s.license          = 'MIT'
     s.author           = { "Flowtoolz" => "contact@flowtoolz.com" }
@@ -13,7 +13,7 @@
     
     # compiler requirements
     s.requires_arc = true
-    s.swift_version = '4.0'
+    s.swift_version = '4.2'
     
     # minimum platform SDKs
     s.platforms = {:ios => "9.0", :osx => "10.10", :tvos => "9.0"}
