@@ -20,7 +20,7 @@ public extension String
         
         var bytes = [Byte]()
         
-        for _ in 0 ..< 16 { bytes.append(Byte.random) }
+        16.times { bytes.append(Byte.random) }
         
         // indicate UUID version and variant
         
@@ -33,11 +33,9 @@ public extension String
         
         return ranges.map
         {
-            range in
-            
             var string = ""
             
-            for i in range
+            for i in $0
             {
                 string += String(bytes[i], radix: 16, uppercase: false)
             }
