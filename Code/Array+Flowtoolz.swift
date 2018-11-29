@@ -1,5 +1,14 @@
 public extension Array
 {
+    func forEachIndex(_ body: (_ element: Element,
+                               _ index: Int) throws -> Void) rethrows
+    {
+        for index in 0 ..< count
+        {
+            try body(self[index], index)
+        }
+    }
+    
     subscript(_ indexes: [Int]) -> [Element]
     {
         var result = [Element]()
