@@ -7,23 +7,33 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9E68B607208BD0C4001F8DEA /* Array+Flowtoolz.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E68B601208BD0C4001F8DEA /* Array+Flowtoolz.swift */; };
-		9E68B608208BD0C4001F8DEA /* BuildConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E68B602208BD0C4001F8DEA /* BuildConfiguration.swift */; };
-		9E68B609208BD0C4001F8DEA /* Dictionary+Flowtoolz.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E68B603208BD0C4001F8DEA /* Dictionary+Flowtoolz.swift */; };
-		9E68B60A208BD0C4001F8DEA /* MessageLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E68B604208BD0C4001F8DEA /* MessageLogger.swift */; };
-		9E68B60B208BD0C4001F8DEA /* String+Flowtoolz.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E68B605208BD0C4001F8DEA /* String+Flowtoolz.swift */; };
-		9E68B60C208BD0C4001F8DEA /* SwiftHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E68B606208BD0C4001F8DEA /* SwiftHelpers.swift */; };
+		9EBF745E21B4693700E0E033 /* Int+SwiftyToolz.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EBF745321B4693700E0E033 /* Int+SwiftyToolz.swift */; };
+		9EBF745F21B4693700E0E033 /* BuildConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EBF745421B4693700E0E033 /* BuildConfiguration.swift */; };
+		9EBF746021B4693700E0E033 /* Array+Flowtoolz.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EBF745521B4693700E0E033 /* Array+Flowtoolz.swift */; };
+		9EBF746121B4693700E0E033 /* WeakArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EBF745621B4693700E0E033 /* WeakArray.swift */; };
+		9EBF746221B4693700E0E033 /* Dictionary+Flowtoolz.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EBF745721B4693700E0E033 /* Dictionary+Flowtoolz.swift */; };
+		9EBF746321B4693700E0E033 /* SwiftHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EBF745821B4693700E0E033 /* SwiftHelpers.swift */; };
+		9EBF746421B4693700E0E033 /* String+Flowtoolz.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EBF745921B4693700E0E033 /* String+Flowtoolz.swift */; };
+		9EBF746521B4693700E0E033 /* Clipboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EBF745A21B4693700E0E033 /* Clipboard.swift */; };
+		9EBF746621B4693700E0E033 /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EBF745B21B4693700E0E033 /* Font.swift */; };
+		9EBF746721B4693700E0E033 /* Copyable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EBF745C21B4693700E0E033 /* Copyable.swift */; };
+		9EBF746821B4693700E0E033 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EBF745D21B4693700E0E033 /* Color.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		9E68B5F7208BD0B0001F8DEA /* SwiftyToolz.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftyToolz.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E68B5FB208BD0B0001F8DEA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9E68B601208BD0C4001F8DEA /* Array+Flowtoolz.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Flowtoolz.swift"; sourceTree = "<group>"; };
-		9E68B602208BD0C4001F8DEA /* BuildConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuildConfiguration.swift; sourceTree = "<group>"; };
-		9E68B603208BD0C4001F8DEA /* Dictionary+Flowtoolz.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Dictionary+Flowtoolz.swift"; sourceTree = "<group>"; };
-		9E68B604208BD0C4001F8DEA /* MessageLogger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageLogger.swift; sourceTree = "<group>"; };
-		9E68B605208BD0C4001F8DEA /* String+Flowtoolz.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Flowtoolz.swift"; sourceTree = "<group>"; };
-		9E68B606208BD0C4001F8DEA /* SwiftHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftHelpers.swift; sourceTree = "<group>"; };
+		9EBF745321B4693700E0E033 /* Int+SwiftyToolz.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Int+SwiftyToolz.swift"; sourceTree = "<group>"; };
+		9EBF745421B4693700E0E033 /* BuildConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuildConfiguration.swift; sourceTree = "<group>"; };
+		9EBF745521B4693700E0E033 /* Array+Flowtoolz.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Flowtoolz.swift"; sourceTree = "<group>"; };
+		9EBF745621B4693700E0E033 /* WeakArray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeakArray.swift; sourceTree = "<group>"; };
+		9EBF745721B4693700E0E033 /* Dictionary+Flowtoolz.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Dictionary+Flowtoolz.swift"; sourceTree = "<group>"; };
+		9EBF745821B4693700E0E033 /* SwiftHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftHelpers.swift; sourceTree = "<group>"; };
+		9EBF745921B4693700E0E033 /* String+Flowtoolz.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Flowtoolz.swift"; sourceTree = "<group>"; };
+		9EBF745A21B4693700E0E033 /* Clipboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Clipboard.swift; sourceTree = "<group>"; };
+		9EBF745B21B4693700E0E033 /* Font.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
+		9EBF745C21B4693700E0E033 /* Copyable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Copyable.swift; sourceTree = "<group>"; };
+		9EBF745D21B4693700E0E033 /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,7 +50,7 @@
 		9E68B5EB208BD09A001F8DEA = {
 			isa = PBXGroup;
 			children = (
-				9E68B600208BD0C4001F8DEA /* Code */,
+				9EBF745221B4693700E0E033 /* Code */,
 				9E68B5FB208BD0B0001F8DEA /* Info.plist */,
 				9E68B5F8208BD0B0001F8DEA /* Products */,
 			);
@@ -54,15 +64,20 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		9E68B600208BD0C4001F8DEA /* Code */ = {
+		9EBF745221B4693700E0E033 /* Code */ = {
 			isa = PBXGroup;
 			children = (
-				9E68B601208BD0C4001F8DEA /* Array+Flowtoolz.swift */,
-				9E68B602208BD0C4001F8DEA /* BuildConfiguration.swift */,
-				9E68B603208BD0C4001F8DEA /* Dictionary+Flowtoolz.swift */,
-				9E68B604208BD0C4001F8DEA /* MessageLogger.swift */,
-				9E68B605208BD0C4001F8DEA /* String+Flowtoolz.swift */,
-				9E68B606208BD0C4001F8DEA /* SwiftHelpers.swift */,
+				9EBF745321B4693700E0E033 /* Int+SwiftyToolz.swift */,
+				9EBF745421B4693700E0E033 /* BuildConfiguration.swift */,
+				9EBF745521B4693700E0E033 /* Array+Flowtoolz.swift */,
+				9EBF745621B4693700E0E033 /* WeakArray.swift */,
+				9EBF745721B4693700E0E033 /* Dictionary+Flowtoolz.swift */,
+				9EBF745821B4693700E0E033 /* SwiftHelpers.swift */,
+				9EBF745921B4693700E0E033 /* String+Flowtoolz.swift */,
+				9EBF745A21B4693700E0E033 /* Clipboard.swift */,
+				9EBF745B21B4693700E0E033 /* Font.swift */,
+				9EBF745C21B4693700E0E033 /* Copyable.swift */,
+				9EBF745D21B4693700E0E033 /* Color.swift */,
 			);
 			path = Code;
 			sourceTree = "<group>";
@@ -104,10 +119,11 @@
 		9E68B5EC208BD09A001F8DEA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0920;
+				LastUpgradeCheck = 1010;
 				TargetAttributes = {
 					9E68B5F6208BD0B0001F8DEA = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 1010;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -144,12 +160,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9E68B607208BD0C4001F8DEA /* Array+Flowtoolz.swift in Sources */,
-				9E68B608208BD0C4001F8DEA /* BuildConfiguration.swift in Sources */,
-				9E68B609208BD0C4001F8DEA /* Dictionary+Flowtoolz.swift in Sources */,
-				9E68B60C208BD0C4001F8DEA /* SwiftHelpers.swift in Sources */,
-				9E68B60B208BD0C4001F8DEA /* String+Flowtoolz.swift in Sources */,
-				9E68B60A208BD0C4001F8DEA /* MessageLogger.swift in Sources */,
+				9EBF745E21B4693700E0E033 /* Int+SwiftyToolz.swift in Sources */,
+				9EBF746421B4693700E0E033 /* String+Flowtoolz.swift in Sources */,
+				9EBF746821B4693700E0E033 /* Color.swift in Sources */,
+				9EBF746521B4693700E0E033 /* Clipboard.swift in Sources */,
+				9EBF746121B4693700E0E033 /* WeakArray.swift in Sources */,
+				9EBF746021B4693700E0E033 /* Array+Flowtoolz.swift in Sources */,
+				9EBF746621B4693700E0E033 /* Font.swift in Sources */,
+				9EBF746321B4693700E0E033 /* SwiftHelpers.swift in Sources */,
+				9EBF746221B4693700E0E033 /* Dictionary+Flowtoolz.swift in Sources */,
+				9EBF746721B4693700E0E033 /* Copyable.swift in Sources */,
+				9EBF745F21B4693700E0E033 /* BuildConfiguration.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -159,12 +180,64 @@
 		9E68B5F0208BD09A001F8DEA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				ONLY_ACTIVE_ARCH = YES;
 			};
 			name = Debug;
 		};
 		9E68B5F1208BD09A001F8DEA /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
 			};
 			name = Release;
 		};
@@ -197,7 +270,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
@@ -234,7 +307,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -270,7 +343,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
@@ -299,7 +372,7 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
