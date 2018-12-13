@@ -7,33 +7,35 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9EBF745E21B4693700E0E033 /* Int+SwiftyToolz.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EBF745321B4693700E0E033 /* Int+SwiftyToolz.swift */; };
-		9EBF745F21B4693700E0E033 /* BuildConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EBF745421B4693700E0E033 /* BuildConfiguration.swift */; };
-		9EBF746021B4693700E0E033 /* Array+Flowtoolz.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EBF745521B4693700E0E033 /* Array+Flowtoolz.swift */; };
-		9EBF746121B4693700E0E033 /* WeakArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EBF745621B4693700E0E033 /* WeakArray.swift */; };
-		9EBF746221B4693700E0E033 /* Dictionary+Flowtoolz.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EBF745721B4693700E0E033 /* Dictionary+Flowtoolz.swift */; };
-		9EBF746321B4693700E0E033 /* SwiftHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EBF745821B4693700E0E033 /* SwiftHelpers.swift */; };
-		9EBF746421B4693700E0E033 /* String+Flowtoolz.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EBF745921B4693700E0E033 /* String+Flowtoolz.swift */; };
-		9EBF746521B4693700E0E033 /* Clipboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EBF745A21B4693700E0E033 /* Clipboard.swift */; };
-		9EBF746621B4693700E0E033 /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EBF745B21B4693700E0E033 /* Font.swift */; };
-		9EBF746721B4693700E0E033 /* Copyable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EBF745C21B4693700E0E033 /* Copyable.swift */; };
-		9EBF746821B4693700E0E033 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EBF745D21B4693700E0E033 /* Color.swift */; };
+		9E6826E321C2D71B002B5BC2 /* Int+SwiftyToolz.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6826D721C2D71B002B5BC2 /* Int+SwiftyToolz.swift */; };
+		9E6826E421C2D71B002B5BC2 /* BuildConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6826D821C2D71B002B5BC2 /* BuildConfiguration.swift */; };
+		9E6826E521C2D71B002B5BC2 /* Array+Flowtoolz.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6826D921C2D71B002B5BC2 /* Array+Flowtoolz.swift */; };
+		9E6826E621C2D71B002B5BC2 /* WeakArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6826DA21C2D71B002B5BC2 /* WeakArray.swift */; };
+		9E6826E721C2D71B002B5BC2 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6826DB21C2D71B002B5BC2 /* Log.swift */; };
+		9E6826E821C2D71B002B5BC2 /* Dictionary+Flowtoolz.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6826DC21C2D71B002B5BC2 /* Dictionary+Flowtoolz.swift */; };
+		9E6826E921C2D71B002B5BC2 /* SwiftHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6826DD21C2D71B002B5BC2 /* SwiftHelpers.swift */; };
+		9E6826EA21C2D71B002B5BC2 /* String+Flowtoolz.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6826DE21C2D71B002B5BC2 /* String+Flowtoolz.swift */; };
+		9E6826EB21C2D71B002B5BC2 /* Clipboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6826DF21C2D71B002B5BC2 /* Clipboard.swift */; };
+		9E6826EC21C2D71B002B5BC2 /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6826E021C2D71B002B5BC2 /* Font.swift */; };
+		9E6826ED21C2D71B002B5BC2 /* Copyable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6826E121C2D71B002B5BC2 /* Copyable.swift */; };
+		9E6826EE21C2D71B002B5BC2 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6826E221C2D71B002B5BC2 /* Color.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9E6826D721C2D71B002B5BC2 /* Int+SwiftyToolz.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Int+SwiftyToolz.swift"; sourceTree = "<group>"; };
+		9E6826D821C2D71B002B5BC2 /* BuildConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuildConfiguration.swift; sourceTree = "<group>"; };
+		9E6826D921C2D71B002B5BC2 /* Array+Flowtoolz.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Flowtoolz.swift"; sourceTree = "<group>"; };
+		9E6826DA21C2D71B002B5BC2 /* WeakArray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeakArray.swift; sourceTree = "<group>"; };
+		9E6826DB21C2D71B002B5BC2 /* Log.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
+		9E6826DC21C2D71B002B5BC2 /* Dictionary+Flowtoolz.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Dictionary+Flowtoolz.swift"; sourceTree = "<group>"; };
+		9E6826DD21C2D71B002B5BC2 /* SwiftHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftHelpers.swift; sourceTree = "<group>"; };
+		9E6826DE21C2D71B002B5BC2 /* String+Flowtoolz.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Flowtoolz.swift"; sourceTree = "<group>"; };
+		9E6826DF21C2D71B002B5BC2 /* Clipboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Clipboard.swift; sourceTree = "<group>"; };
+		9E6826E021C2D71B002B5BC2 /* Font.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
+		9E6826E121C2D71B002B5BC2 /* Copyable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Copyable.swift; sourceTree = "<group>"; };
+		9E6826E221C2D71B002B5BC2 /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		9E68B5F7208BD0B0001F8DEA /* SwiftyToolz.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftyToolz.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E68B5FB208BD0B0001F8DEA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9EBF745321B4693700E0E033 /* Int+SwiftyToolz.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Int+SwiftyToolz.swift"; sourceTree = "<group>"; };
-		9EBF745421B4693700E0E033 /* BuildConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuildConfiguration.swift; sourceTree = "<group>"; };
-		9EBF745521B4693700E0E033 /* Array+Flowtoolz.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Flowtoolz.swift"; sourceTree = "<group>"; };
-		9EBF745621B4693700E0E033 /* WeakArray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeakArray.swift; sourceTree = "<group>"; };
-		9EBF745721B4693700E0E033 /* Dictionary+Flowtoolz.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Dictionary+Flowtoolz.swift"; sourceTree = "<group>"; };
-		9EBF745821B4693700E0E033 /* SwiftHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftHelpers.swift; sourceTree = "<group>"; };
-		9EBF745921B4693700E0E033 /* String+Flowtoolz.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Flowtoolz.swift"; sourceTree = "<group>"; };
-		9EBF745A21B4693700E0E033 /* Clipboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Clipboard.swift; sourceTree = "<group>"; };
-		9EBF745B21B4693700E0E033 /* Font.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
-		9EBF745C21B4693700E0E033 /* Copyable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Copyable.swift; sourceTree = "<group>"; };
-		9EBF745D21B4693700E0E033 /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,10 +49,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9E6826D621C2D71B002B5BC2 /* Code */ = {
+			isa = PBXGroup;
+			children = (
+				9E6826D721C2D71B002B5BC2 /* Int+SwiftyToolz.swift */,
+				9E6826D821C2D71B002B5BC2 /* BuildConfiguration.swift */,
+				9E6826D921C2D71B002B5BC2 /* Array+Flowtoolz.swift */,
+				9E6826DA21C2D71B002B5BC2 /* WeakArray.swift */,
+				9E6826DB21C2D71B002B5BC2 /* Log.swift */,
+				9E6826DC21C2D71B002B5BC2 /* Dictionary+Flowtoolz.swift */,
+				9E6826DD21C2D71B002B5BC2 /* SwiftHelpers.swift */,
+				9E6826DE21C2D71B002B5BC2 /* String+Flowtoolz.swift */,
+				9E6826DF21C2D71B002B5BC2 /* Clipboard.swift */,
+				9E6826E021C2D71B002B5BC2 /* Font.swift */,
+				9E6826E121C2D71B002B5BC2 /* Copyable.swift */,
+				9E6826E221C2D71B002B5BC2 /* Color.swift */,
+			);
+			path = Code;
+			sourceTree = "<group>";
+		};
 		9E68B5EB208BD09A001F8DEA = {
 			isa = PBXGroup;
 			children = (
-				9EBF745221B4693700E0E033 /* Code */,
+				9E6826D621C2D71B002B5BC2 /* Code */,
 				9E68B5FB208BD0B0001F8DEA /* Info.plist */,
 				9E68B5F8208BD0B0001F8DEA /* Products */,
 			);
@@ -62,24 +83,6 @@
 				9E68B5F7208BD0B0001F8DEA /* SwiftyToolz.framework */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		9EBF745221B4693700E0E033 /* Code */ = {
-			isa = PBXGroup;
-			children = (
-				9EBF745321B4693700E0E033 /* Int+SwiftyToolz.swift */,
-				9EBF745421B4693700E0E033 /* BuildConfiguration.swift */,
-				9EBF745521B4693700E0E033 /* Array+Flowtoolz.swift */,
-				9EBF745621B4693700E0E033 /* WeakArray.swift */,
-				9EBF745721B4693700E0E033 /* Dictionary+Flowtoolz.swift */,
-				9EBF745821B4693700E0E033 /* SwiftHelpers.swift */,
-				9EBF745921B4693700E0E033 /* String+Flowtoolz.swift */,
-				9EBF745A21B4693700E0E033 /* Clipboard.swift */,
-				9EBF745B21B4693700E0E033 /* Font.swift */,
-				9EBF745C21B4693700E0E033 /* Copyable.swift */,
-				9EBF745D21B4693700E0E033 /* Color.swift */,
-			);
-			path = Code;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -160,17 +163,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9EBF745E21B4693700E0E033 /* Int+SwiftyToolz.swift in Sources */,
-				9EBF746421B4693700E0E033 /* String+Flowtoolz.swift in Sources */,
-				9EBF746821B4693700E0E033 /* Color.swift in Sources */,
-				9EBF746521B4693700E0E033 /* Clipboard.swift in Sources */,
-				9EBF746121B4693700E0E033 /* WeakArray.swift in Sources */,
-				9EBF746021B4693700E0E033 /* Array+Flowtoolz.swift in Sources */,
-				9EBF746621B4693700E0E033 /* Font.swift in Sources */,
-				9EBF746321B4693700E0E033 /* SwiftHelpers.swift in Sources */,
-				9EBF746221B4693700E0E033 /* Dictionary+Flowtoolz.swift in Sources */,
-				9EBF746721B4693700E0E033 /* Copyable.swift in Sources */,
-				9EBF745F21B4693700E0E033 /* BuildConfiguration.swift in Sources */,
+				9E6826EB21C2D71B002B5BC2 /* Clipboard.swift in Sources */,
+				9E6826ED21C2D71B002B5BC2 /* Copyable.swift in Sources */,
+				9E6826E321C2D71B002B5BC2 /* Int+SwiftyToolz.swift in Sources */,
+				9E6826EC21C2D71B002B5BC2 /* Font.swift in Sources */,
+				9E6826E621C2D71B002B5BC2 /* WeakArray.swift in Sources */,
+				9E6826EE21C2D71B002B5BC2 /* Color.swift in Sources */,
+				9E6826E921C2D71B002B5BC2 /* SwiftHelpers.swift in Sources */,
+				9E6826EA21C2D71B002B5BC2 /* String+Flowtoolz.swift in Sources */,
+				9E6826E821C2D71B002B5BC2 /* Dictionary+Flowtoolz.swift in Sources */,
+				9E6826E721C2D71B002B5BC2 /* Log.swift in Sources */,
+				9E6826E521C2D71B002B5BC2 /* Array+Flowtoolz.swift in Sources */,
+				9E6826E421C2D71B002B5BC2 /* BuildConfiguration.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
