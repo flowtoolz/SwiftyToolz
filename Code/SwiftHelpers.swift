@@ -2,10 +2,7 @@ public typealias JSON = [String : Any]
 
 public typealias Action = () -> Void
 
-public func typeName<T>(_ anything: T) -> String
-{
-    return String(describing: type(of: anything))
-}
+// MARK: - Object Identity
 
 public func address(_ object: AnyObject) -> String
 {
@@ -18,3 +15,19 @@ public func hashValue(_ object: AnyObject) -> HashValue
 }
 
 public typealias HashValue = Int
+
+// MARK: - Type Inspection
+
+public func isOptional(_ type: Any.Type) -> Bool
+{
+    return type is OptionalProtocol.Type
+}
+
+extension Optional: OptionalProtocol {}
+protocol OptionalProtocol {}
+
+public func typeName<T>(_ anything: T) -> String
+{
+    return String(describing: type(of: anything))
+}
+
