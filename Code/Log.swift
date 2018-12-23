@@ -58,19 +58,6 @@ public extension Log
     {
         guard level.integer >= minimumLevel.integer else { return }
         
-        var logString = prefix
-        
-        if level != .info
-        {
-            if logString.count > 0 { logString += " " }
-            
-            logString += level.rawValue.uppercased()
-        }
-        
-        if logString.count > 0 { logString += ": " }
-        
-        logString += message
-        
         var filename = file
         
         if let lastSlashIndex = filename.lastIndex(of: "/")
@@ -85,12 +72,29 @@ public extension Log
                           file: filename,
                           function: function,
                           line: line)
-        
-        logString += " (\(entry.context))"
-        
-        print(logString)
+    
+        print(string(for: entry))
         
         LogObservation.notifyObservers(about: entry)
+    }
+    
+    public func string(for entry: Entry) -> String
+    {
+        var logString = prefix
+        
+        if entry.level != .info
+        {
+            if logString.count > 0 { logString += " " }
+            
+            logString += entry.level.rawValue.uppercased()
+        }
+        
+        if logString.count > 0 { logString += ": " }
+        
+        logString += entry.message
+        logString += " (\(entry.context))"
+        
+        return logString
     }
     
     public func notify(_ observer: LogObserver)
