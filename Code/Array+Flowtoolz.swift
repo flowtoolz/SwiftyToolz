@@ -1,5 +1,25 @@
 public extension Array
 {
+    func splitIntoSlices(ofSize size: Int) -> [ArraySlice<Element>]
+    {
+        guard size > 0 else { return [] }
+        
+        var result = [ArraySlice<Element>]()
+        
+        var sliceStart = -1
+        var sliceEnd = -1
+        
+        while sliceEnd < count - 1
+        {
+            sliceStart = sliceEnd + 1
+            sliceEnd = Swift.min(sliceEnd + size, count - 1)
+            
+            result.append(self[sliceStart ... sliceEnd])
+        }
+        
+        return result
+    }
+    
     func forEachIndex(_ body: (_ element: Element,
                                _ index: Int) throws -> Void) rethrows
     {
