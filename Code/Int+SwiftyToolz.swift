@@ -8,7 +8,7 @@ public extension Int
         }
     }
     
-    public static func random(max: Int = .max) -> Int
+    static func random(max: Int = .max) -> Int
     {
         return Int.random(in: 0 ... max)
     }
@@ -16,7 +16,7 @@ public extension Int
 
 public extension UInt8
 {
-    public static var random: UInt8
+    static var random: UInt8
     {
         return UInt8.random(in: 0 ... .max)
     }

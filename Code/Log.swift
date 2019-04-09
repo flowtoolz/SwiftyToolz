@@ -48,13 +48,13 @@ public func log(_ message: String = "",
 
 public extension Log
 {
-    public func log(message: String,
-                    title: String? = nil,
-                    level: Level = .info,
-                    forUser: Bool = false,
-                    file: String = #file,
-                    function: String = #function,
-                    line: Int = #line)
+    func log(message: String,
+             title: String? = nil,
+             level: Level = .info,
+             forUser: Bool = false,
+             file: String = #file,
+             function: String = #function,
+             line: Int = #line)
     {
         guard level.integer >= minimumLevel.integer else { return }
         
@@ -78,7 +78,7 @@ public extension Log
         LogObservation.notifyObservers(about: entry)
     }
     
-    public func string(for entry: Entry) -> String
+    func string(for entry: Entry) -> String
     {
         var logString = prefix
         
@@ -97,12 +97,12 @@ public extension Log
         return logString
     }
     
-    public func notify(_ observer: LogObserver)
+    func notify(_ observer: LogObserver)
     {
         LogObservation.notify(observer)
     }
     
-    public func stopNotifying(_ observer: LogObserver)
+    func stopNotifying(_ observer: LogObserver)
     {
         LogObservation.stopNotifying(observer)
     }

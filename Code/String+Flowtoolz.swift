@@ -7,7 +7,7 @@ public extension String
         self = string
     }
     
-    public static func makeUUID() -> String
+    static func makeUUID() -> String
     {
         // create random bytes
         
