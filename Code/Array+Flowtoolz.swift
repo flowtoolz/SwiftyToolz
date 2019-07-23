@@ -31,16 +31,7 @@ public extension Array
     
     subscript(_ indexes: [Int]) -> [Element]
     {
-        var result = [Element]()
-        
-        for index in indexes
-        {
-            guard isValid(index: index) else { continue }
-            
-            result.append(self[index])
-        }
-        
-        return result
+        return indexes.compactMap { isValid(index: $0) ? self[$0] : nil }
     }
     
     mutating func moveElement(from: Int, to: Int) -> Bool
@@ -76,8 +67,6 @@ public extension Array
     
     func isValid(index: Int?) -> Bool
     {
-        guard let index = index else { return false }
-        
-        return index >= 0 && index < count
+        return indices.contains(index ?? -1)
     }
 }
