@@ -1,7 +1,10 @@
-public struct WeakArray<Element: AnyObject>
+public struct WeakArray<Element: AnyObject>: Collection, RangeReplaceableCollection
 {
     public init() {}
     
+    public var startIndex: Int { return 0 }
+    public var endIndex: Int { return count - 1 }
+    public func index(after i: Int) -> Int { return i + 1 }
     public var count: Int { return array.count }
     
     public var elements: [Element?]
