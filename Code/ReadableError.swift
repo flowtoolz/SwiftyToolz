@@ -1,3 +1,8 @@
+public func log(_ error: Error)
+{
+    log(error: error.readable.message)
+}
+
 public extension Error
 {
     var readable: ReadableError
@@ -8,6 +13,7 @@ public extension Error
         }
         else
         {
+            // TODO: if this is supposed to be a pure Swift model type, then don't depend on Foundation!
             return .message(localizedDescription)
         }
     }
