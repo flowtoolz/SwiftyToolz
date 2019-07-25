@@ -73,57 +73,38 @@ public extension Log
                           function: function,
                           line: line)
     
-        print(string(for: entry))
+        print(entry.description + "\n")
         
-        LogObservation.notifyObservers(about: entry)
+        LogObservers.receive(entry)
     }
     
-    func string(for entry: Entry) -> String
+    func add(observer: LogObserver)
     {
-        var logString = prefix
-        
-        if entry.level != .info
-        {
-            if logString.count > 0 { logString += " " }
-            
-            logString += entry.level.rawValue.uppercased()
-        }
-        
-        if logString.count > 0 { logString += ": " }
-        
-        logString += entry.message
-        logString += " (\(entry.context))"
-        
-        return logString
+        LogObservers.add(observer)
     }
     
-    func notify(_ observer: LogObserver)
+    func remove(observer: LogObserver)
     {
-        LogObservation.notify(observer)
-    }
-    
-    func stopNotifying(_ observer: LogObserver)
-    {
-        LogObservation.stopNotifying(observer)
+        LogObservers.remove(observer)
     }
 }
 
-fileprivate struct LogObservation
+private struct LogObservers
 {
-    static func notify(_ observer: LogObserver)
+    static func add(_ observer: LogObserver)
     {
         observers[hashValue(observer)] = WeakObserver(observer: observer)
     }
     
-    static func stopNotifying(_ observer: LogObserver)
+    static func remove(_ observer: LogObserver)
     {
         observers[hashValue(observer)] = nil
     }
     
-    static func notifyObservers(about entry: Log.Entry)
+    static func receive(_ entry: Log.Entry)
     {
         observers.remove { $0.observer == nil }
-        observers.values.forEach { $0.observer?.process(entry) }
+        observers.values.forEach { $0.observer?.receive(entry) }
     }
     
     static var observers = [HashValue : WeakObserver]()
@@ -136,7 +117,7 @@ fileprivate struct LogObservation
 
 public protocol LogObserver: AnyObject
 {
-    func process(_ entry: Log.Entry)
+    func receive(_ entry: Log.Entry)
 }
 
 public class Log
@@ -144,15 +125,26 @@ public class Log
     // MARK: - Singleton Access
     
     public static let shared = Log()
-    
     private init() {}
     
-    // MARK: - Logging
-    
-    public var prefix = ""
+    // MARK: - Entry
     
     public struct Entry: Codable, Equatable
     {
+        public var description: String
+        {
+            var prefix = Entry.prefix
+            
+            if level != .info
+            {
+                prefix += " " + level.rawValue.uppercased()
+            }
+            
+            if prefix.count > 0 { prefix += ": " }
+            
+            return "\(prefix)\(message)\n    (\(context))"
+        }
+        
         public var context: String
         {
             return "\(file), \(function), line \(line)"
@@ -165,9 +157,10 @@ public class Log
         public var file = ""
         public var function = ""
         public var line = 0
+        public static var prefix = ""
     }
     
-    // MARK: - Log Levels
+    // MARK: - Levels
     
     public var minimumLevel: Level = .info
     
