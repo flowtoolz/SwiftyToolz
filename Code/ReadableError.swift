@@ -1,8 +1,3 @@
-public func log(_ error: Error)
-{
-    log(error: error.readable.message)
-}
-
 public extension Error
 {
     var readable: ReadableError
