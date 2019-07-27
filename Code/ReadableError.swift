@@ -7,15 +7,7 @@ public extension Error
 {
     var readable: ReadableError
     {
-        if let readableError = self as? ReadableError
-        {
-            return readableError
-        }
-        else
-        {
-            // TODO: if this is supposed to be a pure Swift model type, then don't depend on Foundation!
-            return .message(localizedDescription)
-        }
+        return self as? ReadableError ?? .message(self as? String ?? "\(self)")
     }
 }
 
