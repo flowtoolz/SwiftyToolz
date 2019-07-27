@@ -6,27 +6,19 @@ public extension Error
     }
 }
 
-public enum ReadableError: Error, CustomDebugStringConvertible
+extension String: Error {}
+
+public enum ReadableError: Error, CustomStringConvertible, CustomDebugStringConvertible
 {
-    public init(_ message: String) { self = .message(message) }
+    public init(_ text: String) { self = .message(text) }
     
-    public var localizedDescription: String
-    {
-        return message
-    }
+    public var description: String { return message }
     
-    public var debugDescription: String
-    {
-        return message
-    }
+    public var debugDescription: String { return message }
     
     public var message: String
     {
-        switch self
-        {
-        // TODO: can we make this more readable with https://github.com/mxcl/LegibleError ?
-        case .message(let text): return text
-        }
+        switch self { case .message(let text): return text }
     }
     
     case message(_ text: String)
