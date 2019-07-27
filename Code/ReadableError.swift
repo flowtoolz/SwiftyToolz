@@ -21,6 +21,8 @@ public extension Error
 
 public enum ReadableError: Error, CustomDebugStringConvertible
 {
+    public init(_ message: String) { self = .message(message) }
+    
     public var localizedDescription: String
     {
         return message
