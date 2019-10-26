@@ -1,5 +1,7 @@
 public extension Error
 {
+    static func readable(_ text: String) -> ReadableError { .init(text) }
+    
     var readable: ReadableError
     {
         self as? ReadableError ?? .message(self as? String ?? "\(self)")
