@@ -2,7 +2,7 @@ public extension Error
 {
     var readable: ReadableError
     {
-        return self as? ReadableError ?? .message(self as? String ?? "\(self)")
+        self as? ReadableError ?? .message(self as? String ?? "\(self)")
     }
 }
 
@@ -12,9 +12,9 @@ public enum ReadableError: Error, CustomStringConvertible, CustomDebugStringConv
 {
     public init(_ text: String) { self = .message(text) }
     
-    public var description: String { return message }
+    public var description: String { message }
     
-    public var debugDescription: String { return message }
+    public var debugDescription: String { message }
     
     public var message: String
     {

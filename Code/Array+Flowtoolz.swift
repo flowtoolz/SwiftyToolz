@@ -31,7 +31,7 @@ public extension Array
     
     subscript(_ indexes: [Int]) -> [Element]
     {
-        return indexes.compactMap { isValid(index: $0) ? self[$0] : nil }
+        indexes.compactMap { isValid(index: $0) ? self[$0] : nil }
     }
     
     mutating func moveElement(from: Int, to: Int) -> Bool
@@ -67,6 +67,6 @@ public extension Array
     
     func isValid(index: Int?) -> Bool
     {
-        return indices.contains(index ?? -1)
+        indices.contains(index ?? -1)
     }
 }

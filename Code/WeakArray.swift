@@ -2,14 +2,14 @@ public struct WeakArray<Element: AnyObject>: Collection, RangeReplaceableCollect
 {
     public init() {}
     
-    public var startIndex: Int { return 0 }
-    public var endIndex: Int { return count - 1 }
-    public func index(after i: Int) -> Int { return i + 1 }
-    public var count: Int { return array.count }
+    public var startIndex: Int { array.startIndex }
+    public var endIndex: Int { array.endIndex }
+    public func index(after i: Int) -> Int { array.index(after: i) }
+    public var count: Int { array.count }
     
     public var elements: [Element?]
     {
-        get { return array.map { $0.object } }
+        get { array.map { $0.object } }
         
         set { array = newValue.map { Weak($0) } }
     }
@@ -40,7 +40,7 @@ public struct WeakArray<Element: AnyObject>: Collection, RangeReplaceableCollect
     
     public func isValid(index: Int?) -> Bool
     {
-        return array.isValid(index: index)
+        array.isValid(index: index)
     }
     
     public mutating func insert(_ object: Element, at index: Int)

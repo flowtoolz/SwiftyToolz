@@ -2,7 +2,7 @@ public class Clipboard<Object: Copyable>
 {
     public init() {}
     
-    public var count: Int { return copies?.count ?? 0 }
+    public var count: Int { copies?.count ?? 0 }
     
     public func removeAll()
     {

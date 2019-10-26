@@ -1,12 +1,12 @@
 public extension Color
 {
-    static var black: Color { return .gray(brightness: 0) }
-    static var white: Color { return .gray(brightness: 1) }
-    static var clear: Color { return Color(0.0, 0.0, 0.0, 0.0) }
+    static var black: Color { .gray(brightness: 0) }
+    static var white: Color { .gray(brightness: 1) }
+    static var clear: Color { Color(0.0, 0.0, 0.0, 0.0) }
     
     static func gray(brightness: Float) -> Color
     {
-        return Color(brightness, brightness, brightness)
+        Color(brightness, brightness, brightness)
     }
     
     func with(alpha: Float) -> Color

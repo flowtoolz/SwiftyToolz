@@ -18,21 +18,21 @@ public enum BuildConfiguration: String
     
     public var isDebug: Bool
     {
-        return self == .debug
+        self == .debug
     }
     
     public var isIntegration: Bool
     {
-        return self == .integration
+        self == .integration
     }
     
     public var isRelease: Bool
     {
-        return self == .release
+        self == .release
     }
     
     public var isUnknown: Bool
     {
-        return self == .unknown
+        self == .unknown
     }
 }
