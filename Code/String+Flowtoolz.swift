@@ -36,4 +36,13 @@ public extension String
             return string
         }.joined(separator: "-")
     }
+    
+    var fileExtension: String?
+    {
+        let parts = components(separatedBy: ".")
+        guard let lastPart = parts.last,
+            parts.count > 1,
+            (1 ... 4).contains(lastPart.count) else { return nil }
+        return lastPart
+    }
 }
