@@ -10,16 +10,13 @@ public extension Int
     
     static func random(max: Int = .max) -> Int
     {
-        Int.random(in: 0 ... max)
+        .random(in: 0 ... max)
     }
 }
 
 public extension UInt8
 {
-    static var random: UInt8
-    {
-        UInt8.random(in: 0 ... .max)
-    }
+    static var random: UInt8 { .random(in: 0 ... .max) }
 }
 
 public typealias Byte = UInt8

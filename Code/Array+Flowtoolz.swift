@@ -31,7 +31,7 @@ public extension Array
     
     subscript(_ indexes: [Int]) -> [Element]
     {
-        indexes.compactMap { isValid(index: $0) ? self[$0] : nil }
+        indexes.compactMap(at)
     }
     
     mutating func moveElement(from: Int, to: Int) -> Bool
@@ -53,20 +53,14 @@ public extension Array
         removeLast(Swift.max(0, count - maxCount))
     }
     
-    mutating func remove(where shouldRemove: (Element) -> Bool)
-    {
-        var index = count - 1
-        
-        while index >= 0
-        {
-            if shouldRemove(self[index]) { remove(at: index) }
-            
-            index -= 1
-        }
-    }
-    
     func isValid(index: Int?) -> Bool
     {
         indices.contains(index ?? -1)
+    }
+    
+    func at(_ index: Int?) -> Element?
+    {
+        guard let index = index else { return nil }
+        return isValid(index: index) ? self[index] : nil
     }
 }

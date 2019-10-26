@@ -16,12 +16,7 @@ public struct WeakArray<Element: AnyObject>: Collection, RangeReplaceableCollect
     
     public subscript(index: Int) -> Element?
     {
-        get
-        {
-            guard isValid(index: index) else { return nil }
-            
-            return array[index].object
-        }
+        get { array.at(index)?.object }
         
         set
         {
