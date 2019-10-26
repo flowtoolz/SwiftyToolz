@@ -18,13 +18,6 @@ public typealias HashValue = Int
 
 // MARK: - Type Inspection
 
-public func isOptional(_ type: Any.Type) -> Bool
-{
-    return type is OptionalProtocol.Type
-}
-
-extension Optional: OptionalProtocol {}
-protocol OptionalProtocol {}
 
 public func typeName<T>(_ anything: T) -> String
 {
