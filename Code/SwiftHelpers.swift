@@ -2,12 +2,15 @@ public typealias JSON = [String : Any]
 
 public typealias Action = () -> Void
 
-public extension Optional {
-    func forSome(_ do: ((Wrapped) -> Void)?) {
+public extension Optional
+{
+    func forSome(_ do: ((Wrapped) -> Void)?)
+    {
         if case .some(let wrapped) = self { `do`?(wrapped) }
     }
     
-    func forSome(_ do: (Wrapped) -> Void) {
+    func forSome(_ do: (Wrapped) -> Void)
+    {
         if case .some(let wrapped) = self { `do`(wrapped) }
     }
 }

@@ -1,5 +1,11 @@
 public extension Array
 {
+    init(count: Int, make: () -> Element)
+    {
+        self.init()
+        count.times { append(make()) }
+    }
+    
     func splitIntoSlices(ofSize size: Int) -> [ArraySlice<Element>]
     {
         guard size > 0 else { return [] }
@@ -62,5 +68,17 @@ public extension Array
     {
         guard let index = index else { return nil }
         return isValid(index: index) ? self[index] : nil
+    }
+}
+
+extension Array where Element: Comparable
+{    
+    @discardableResult
+    mutating func insertSorted(_ newElement: Element) -> Int
+    {
+        // TODO: use binary search to improve performance from O(n) to O(log2(n))
+        let insertionIndex = firstIndex(where: { $0 > newElement }) ?? count
+        insert(newElement, at: insertionIndex)
+        return insertionIndex
     }
 }

@@ -1,11 +1,9 @@
 public extension Int
 {
-    func times(_ body: () throws -> Void) rethrows
+    func times(_ do: () throws -> Void) rethrows
     {
-        if self > 0
-        {
-            for _ in 0 ..< self { try body() }
-        }
+        guard self > 0 else { return }
+        for _ in 0 ..< self { try `do`() }
     }
     
     static func random(max: Int = .max) -> Int
