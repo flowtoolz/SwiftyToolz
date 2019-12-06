@@ -1,6 +1,6 @@
 public extension Dictionary
 {
-    mutating func remove(where shouldRemove: (Value) -> Bool )
+    mutating func remove(where shouldRemove: (Value) -> Bool)
     {
         for (key, value) in self
         {

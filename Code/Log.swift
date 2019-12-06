@@ -93,12 +93,12 @@ private struct LogObservers
 {
     static func add(_ observer: LogObserver)
     {
-        observers[hashValue(observer)] = WeakObserver(observer: observer)
+        observers[observer.key] = WeakObserver(observer: observer)
     }
     
     static func remove(_ observer: LogObserver)
     {
-        observers[hashValue(observer)] = nil
+        observers[observer.key] = nil
     }
     
     static func receive(_ entry: Log.Entry)
@@ -107,14 +107,23 @@ private struct LogObservers
         observers.values.forEach { $0.observer?.receive(entry) }
     }
     
-    static var observers = [HashValue : WeakObserver]()
+    static var observers = [LogObserver.Key : WeakObserver]()
     
     struct WeakObserver
     {
         weak var observer: LogObserver?
     }
+    
+    
 }
 
+extension LogObserver
+{
+    var key: Key { Key(self) }
+    typealias Key = ObjectIdentifier
+}
+
+// TODO: why force the log observer to adopt a protocol, isn't it enought to require it's a class object? -> store receive closure in WeakObserver ...
 public protocol LogObserver: AnyObject
 {
     func receive(_ entry: Log.Entry)

@@ -10,10 +10,10 @@ public extension Array
         array.append(contentsOf: elements)
     }
         
-    init(count: Int, make: () -> Element)
+    init(count: Int, make: () throws -> Element) rethrows
     {
         self.init()
-        count.times { append(make()) }
+        try count.times { try append(make()) }
     }
     
     func splitIntoSlices(ofSize size: Int) -> [ArraySlice<Element>]
