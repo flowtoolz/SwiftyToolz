@@ -1,7 +1,7 @@
 public func log(error: String,
                 title: String? = nil,
                 forUser: Bool = false,
-                file: String = #file,
+                filePath: String = #file,
                 function: String = #function,
                 line: Int = #line)
 {
@@ -9,7 +9,7 @@ public func log(error: String,
                    title: title,
                    level: .error,
                    forUser: forUser,
-                   file: file,
+                   filePath: filePath,
                    function: function,
                    line: line)
 }
@@ -17,7 +17,7 @@ public func log(error: String,
 public func log(warning: String,
                 title: String? = nil,
                 forUser: Bool = false,
-                file: String = #file,
+                filePath: String = #file,
                 function: String = #function,
                 line: Int = #line)
 {
@@ -25,7 +25,7 @@ public func log(warning: String,
                    title: title,
                    level: .warning,
                    forUser: forUser,
-                   file: file,
+                   filePath: filePath,
                    function: function,
                    line: line)
 }
@@ -33,7 +33,7 @@ public func log(warning: String,
 public func log(_ message: String = "",
                 title: String? = nil,
                 forUser: Bool = false,
-                file: String = #file,
+                filePath: String = #file,
                 function: String = #function,
                 line: Int = #line)
 {
@@ -41,7 +41,7 @@ public func log(_ message: String = "",
                    title: title,
                    level: .info,
                    forUser: forUser,
-                   file: file,
+                   filePath: filePath,
                    function: function,
                    line: line)
 }
@@ -52,24 +52,19 @@ public extension Log
              title: String? = nil,
              level: Level = .info,
              forUser: Bool = false,
-             file: String = #file,
+             filePath: String = #file,
              function: String = #function,
              line: Int = #line)
     {
         guard level.integer >= minimumLevel.integer else { return }
         
-        var filename = file
-        
-        if let lastSlashIndex = filename.lastIndex(of: "/")
-        {
-            filename.removeSubrange(filename.startIndex ... lastSlashIndex)
-        }
+        let filename = filePath.fileNameFromPath.map(String.init) ?? filePath
         
         let entry = Entry(message: message,
                           title: title,
                           level: level,
                           forUser: forUser,
-                          file: filename,
+                          fileName: filename,
                           function: function,
                           line: line)
     
@@ -113,8 +108,6 @@ private struct LogObservers
     {
         weak var observer: LogObserver?
     }
-    
-    
 }
 
 extension LogObserver
@@ -156,14 +149,14 @@ public class Log
         
         public var context: String
         {
-            return "\(file), \(function), line \(line)"
+            return "\(fileName), \(function), line \(line)"
         }
         
         public var message = ""
         public var title: String?
         public var level = Level.info
         public var forUser = false
-        public var file = ""
+        public var fileName = ""
         public var function = ""
         public var line = 0
         public static var prefix = ""
