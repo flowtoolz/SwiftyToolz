@@ -1,5 +1,19 @@
 public extension String
 {
+    var fileExtensionFromName: Substring?
+    {
+        guard let dotIndex = lastIndex(of: ".") else { return nil }
+        let lastPart = self[index(after: dotIndex) ..< endIndex]
+        guard (1 ... 4).contains(lastPart.count) else { return nil }
+        return lastPart
+    }
+    
+    var fileNameFromPath: Substring?
+    {
+        guard let pathEnd = lastIndex(of: "/") else { return nil }
+        return self[index(after: pathEnd) ..< endIndex]
+    }
+    
     init?(withNonEmpty string: String?)
     {
         guard let string = string, string != "" else { return nil }
