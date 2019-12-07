@@ -2,7 +2,7 @@
     
     # meta infos
     s.name             = "SwiftyToolz"
-    s.version          = "1.5.3"
+    s.version          = "1.5.4"
     s.summary          = "Swift Code by Flowtoolz"
     s.description      = "Swift Code by Flowtoolz. Visit https://github.com/flowtoolz for more."
     s.homepage         = "http://flowtoolz.com"
