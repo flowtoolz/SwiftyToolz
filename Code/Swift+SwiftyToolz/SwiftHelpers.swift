@@ -10,3 +10,10 @@ public func typeName<T>(_ anything: T) -> String
 {
     String(describing: type(of: anything))
 }
+
+public func hashValue(_ object: AnyObject) -> HashValue
+{
+    return ObjectIdentifier(object).hashValue
+}
+
+public typealias HashValue = Int
