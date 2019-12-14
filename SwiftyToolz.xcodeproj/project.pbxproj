@@ -7,33 +7,37 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9E6826E321C2D71B002B5BC2 /* Int+SwiftyToolz.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6826D721C2D71B002B5BC2 /* Int+SwiftyToolz.swift */; };
-		9E6826E421C2D71B002B5BC2 /* BuildConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6826D821C2D71B002B5BC2 /* BuildConfiguration.swift */; };
-		9E6826E521C2D71B002B5BC2 /* Array+Flowtoolz.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6826D921C2D71B002B5BC2 /* Array+Flowtoolz.swift */; };
-		9E6826E621C2D71B002B5BC2 /* WeakArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6826DA21C2D71B002B5BC2 /* WeakArray.swift */; };
-		9E6826E721C2D71B002B5BC2 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6826DB21C2D71B002B5BC2 /* Log.swift */; };
-		9E6826E821C2D71B002B5BC2 /* Dictionary+Flowtoolz.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6826DC21C2D71B002B5BC2 /* Dictionary+Flowtoolz.swift */; };
-		9E6826E921C2D71B002B5BC2 /* SwiftHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6826DD21C2D71B002B5BC2 /* SwiftHelpers.swift */; };
-		9E6826EA21C2D71B002B5BC2 /* String+Flowtoolz.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6826DE21C2D71B002B5BC2 /* String+Flowtoolz.swift */; };
-		9E6826EB21C2D71B002B5BC2 /* Clipboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6826DF21C2D71B002B5BC2 /* Clipboard.swift */; };
-		9E6826EC21C2D71B002B5BC2 /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6826E021C2D71B002B5BC2 /* Font.swift */; };
-		9E6826ED21C2D71B002B5BC2 /* Copyable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6826E121C2D71B002B5BC2 /* Copyable.swift */; };
-		9E6826EE21C2D71B002B5BC2 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6826E221C2D71B002B5BC2 /* Color.swift */; };
+		9697A59423A4E95A009B4002 /* BuildConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9697A58523A4E95A009B4002 /* BuildConfiguration.swift */; };
+		9697A59523A4E95A009B4002 /* Int+SwiftyToolz.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9697A58723A4E95A009B4002 /* Int+SwiftyToolz.swift */; };
+		9697A59623A4E95A009B4002 /* Array+SwiftyToolz.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9697A58823A4E95A009B4002 /* Array+SwiftyToolz.swift */; };
+		9697A59723A4E95A009B4002 /* Optional+SwiftyToolz.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9697A58923A4E95A009B4002 /* Optional+SwiftyToolz.swift */; };
+		9697A59823A4E95A009B4002 /* SwiftHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9697A58A23A4E95A009B4002 /* SwiftHelpers.swift */; };
+		9697A59923A4E95A009B4002 /* Dictionary+SwiftyToolz.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9697A58B23A4E95A009B4002 /* Dictionary+SwiftyToolz.swift */; };
+		9697A59A23A4E95A009B4002 /* String+SwiftyToolz.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9697A58C23A4E95A009B4002 /* String+SwiftyToolz.swift */; };
+		9697A59B23A4E95A009B4002 /* WeakArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9697A58D23A4E95A009B4002 /* WeakArray.swift */; };
+		9697A59C23A4E95A009B4002 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9697A58E23A4E95A009B4002 /* Log.swift */; };
+		9697A59D23A4E95A009B4002 /* Clipboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9697A58F23A4E95A009B4002 /* Clipboard.swift */; };
+		9697A59E23A4E95A009B4002 /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9697A59023A4E95A009B4002 /* Font.swift */; };
+		9697A59F23A4E95A009B4002 /* Copyable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9697A59123A4E95A009B4002 /* Copyable.swift */; };
+		9697A5A023A4E95A009B4002 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9697A59223A4E95A009B4002 /* Color.swift */; };
+		9697A5A123A4E95A009B4002 /* ReadableError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9697A59323A4E95A009B4002 /* ReadableError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		9E6826D721C2D71B002B5BC2 /* Int+SwiftyToolz.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Int+SwiftyToolz.swift"; sourceTree = "<group>"; };
-		9E6826D821C2D71B002B5BC2 /* BuildConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuildConfiguration.swift; sourceTree = "<group>"; };
-		9E6826D921C2D71B002B5BC2 /* Array+Flowtoolz.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Flowtoolz.swift"; sourceTree = "<group>"; };
-		9E6826DA21C2D71B002B5BC2 /* WeakArray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeakArray.swift; sourceTree = "<group>"; };
-		9E6826DB21C2D71B002B5BC2 /* Log.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
-		9E6826DC21C2D71B002B5BC2 /* Dictionary+Flowtoolz.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Dictionary+Flowtoolz.swift"; sourceTree = "<group>"; };
-		9E6826DD21C2D71B002B5BC2 /* SwiftHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftHelpers.swift; sourceTree = "<group>"; };
-		9E6826DE21C2D71B002B5BC2 /* String+Flowtoolz.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Flowtoolz.swift"; sourceTree = "<group>"; };
-		9E6826DF21C2D71B002B5BC2 /* Clipboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Clipboard.swift; sourceTree = "<group>"; };
-		9E6826E021C2D71B002B5BC2 /* Font.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
-		9E6826E121C2D71B002B5BC2 /* Copyable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Copyable.swift; sourceTree = "<group>"; };
-		9E6826E221C2D71B002B5BC2 /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		9697A58523A4E95A009B4002 /* BuildConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuildConfiguration.swift; sourceTree = "<group>"; };
+		9697A58723A4E95A009B4002 /* Int+SwiftyToolz.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Int+SwiftyToolz.swift"; sourceTree = "<group>"; };
+		9697A58823A4E95A009B4002 /* Array+SwiftyToolz.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+SwiftyToolz.swift"; sourceTree = "<group>"; };
+		9697A58923A4E95A009B4002 /* Optional+SwiftyToolz.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Optional+SwiftyToolz.swift"; sourceTree = "<group>"; };
+		9697A58A23A4E95A009B4002 /* SwiftHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftHelpers.swift; sourceTree = "<group>"; };
+		9697A58B23A4E95A009B4002 /* Dictionary+SwiftyToolz.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Dictionary+SwiftyToolz.swift"; sourceTree = "<group>"; };
+		9697A58C23A4E95A009B4002 /* String+SwiftyToolz.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+SwiftyToolz.swift"; sourceTree = "<group>"; };
+		9697A58D23A4E95A009B4002 /* WeakArray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeakArray.swift; sourceTree = "<group>"; };
+		9697A58E23A4E95A009B4002 /* Log.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
+		9697A58F23A4E95A009B4002 /* Clipboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Clipboard.swift; sourceTree = "<group>"; };
+		9697A59023A4E95A009B4002 /* Font.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
+		9697A59123A4E95A009B4002 /* Copyable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Copyable.swift; sourceTree = "<group>"; };
+		9697A59223A4E95A009B4002 /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		9697A59323A4E95A009B4002 /* ReadableError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReadableError.swift; sourceTree = "<group>"; };
 		9E68B5F7208BD0B0001F8DEA /* SwiftyToolz.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftyToolz.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E68B5FB208BD0B0001F8DEA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -49,29 +53,39 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		9E6826D621C2D71B002B5BC2 /* Code */ = {
+		9697A58423A4E95A009B4002 /* Code */ = {
 			isa = PBXGroup;
 			children = (
-				9E6826D721C2D71B002B5BC2 /* Int+SwiftyToolz.swift */,
-				9E6826D821C2D71B002B5BC2 /* BuildConfiguration.swift */,
-				9E6826D921C2D71B002B5BC2 /* Array+Flowtoolz.swift */,
-				9E6826DA21C2D71B002B5BC2 /* WeakArray.swift */,
-				9E6826DB21C2D71B002B5BC2 /* Log.swift */,
-				9E6826DC21C2D71B002B5BC2 /* Dictionary+Flowtoolz.swift */,
-				9E6826DD21C2D71B002B5BC2 /* SwiftHelpers.swift */,
-				9E6826DE21C2D71B002B5BC2 /* String+Flowtoolz.swift */,
-				9E6826DF21C2D71B002B5BC2 /* Clipboard.swift */,
-				9E6826E021C2D71B002B5BC2 /* Font.swift */,
-				9E6826E121C2D71B002B5BC2 /* Copyable.swift */,
-				9E6826E221C2D71B002B5BC2 /* Color.swift */,
+				9697A58523A4E95A009B4002 /* BuildConfiguration.swift */,
+				9697A58623A4E95A009B4002 /* Swift+SwiftyToolz */,
+				9697A58D23A4E95A009B4002 /* WeakArray.swift */,
+				9697A58E23A4E95A009B4002 /* Log.swift */,
+				9697A58F23A4E95A009B4002 /* Clipboard.swift */,
+				9697A59023A4E95A009B4002 /* Font.swift */,
+				9697A59123A4E95A009B4002 /* Copyable.swift */,
+				9697A59223A4E95A009B4002 /* Color.swift */,
+				9697A59323A4E95A009B4002 /* ReadableError.swift */,
 			);
 			path = Code;
+			sourceTree = "<group>";
+		};
+		9697A58623A4E95A009B4002 /* Swift+SwiftyToolz */ = {
+			isa = PBXGroup;
+			children = (
+				9697A58723A4E95A009B4002 /* Int+SwiftyToolz.swift */,
+				9697A58823A4E95A009B4002 /* Array+SwiftyToolz.swift */,
+				9697A58923A4E95A009B4002 /* Optional+SwiftyToolz.swift */,
+				9697A58A23A4E95A009B4002 /* SwiftHelpers.swift */,
+				9697A58B23A4E95A009B4002 /* Dictionary+SwiftyToolz.swift */,
+				9697A58C23A4E95A009B4002 /* String+SwiftyToolz.swift */,
+			);
+			path = "Swift+SwiftyToolz";
 			sourceTree = "<group>";
 		};
 		9E68B5EB208BD09A001F8DEA = {
 			isa = PBXGroup;
 			children = (
-				9E6826D621C2D71B002B5BC2 /* Code */,
+				9697A58423A4E95A009B4002 /* Code */,
 				9E68B5FB208BD0B0001F8DEA /* Info.plist */,
 				9E68B5F8208BD0B0001F8DEA /* Products */,
 			);
@@ -164,18 +178,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9E6826EB21C2D71B002B5BC2 /* Clipboard.swift in Sources */,
-				9E6826ED21C2D71B002B5BC2 /* Copyable.swift in Sources */,
-				9E6826E321C2D71B002B5BC2 /* Int+SwiftyToolz.swift in Sources */,
-				9E6826EC21C2D71B002B5BC2 /* Font.swift in Sources */,
-				9E6826E621C2D71B002B5BC2 /* WeakArray.swift in Sources */,
-				9E6826EE21C2D71B002B5BC2 /* Color.swift in Sources */,
-				9E6826E921C2D71B002B5BC2 /* SwiftHelpers.swift in Sources */,
-				9E6826EA21C2D71B002B5BC2 /* String+Flowtoolz.swift in Sources */,
-				9E6826E821C2D71B002B5BC2 /* Dictionary+Flowtoolz.swift in Sources */,
-				9E6826E721C2D71B002B5BC2 /* Log.swift in Sources */,
-				9E6826E521C2D71B002B5BC2 /* Array+Flowtoolz.swift in Sources */,
-				9E6826E421C2D71B002B5BC2 /* BuildConfiguration.swift in Sources */,
+				9697A59723A4E95A009B4002 /* Optional+SwiftyToolz.swift in Sources */,
+				9697A59E23A4E95A009B4002 /* Font.swift in Sources */,
+				9697A59B23A4E95A009B4002 /* WeakArray.swift in Sources */,
+				9697A59D23A4E95A009B4002 /* Clipboard.swift in Sources */,
+				9697A5A023A4E95A009B4002 /* Color.swift in Sources */,
+				9697A59F23A4E95A009B4002 /* Copyable.swift in Sources */,
+				9697A59C23A4E95A009B4002 /* Log.swift in Sources */,
+				9697A59523A4E95A009B4002 /* Int+SwiftyToolz.swift in Sources */,
+				9697A59A23A4E95A009B4002 /* String+SwiftyToolz.swift in Sources */,
+				9697A59423A4E95A009B4002 /* BuildConfiguration.swift in Sources */,
+				9697A59623A4E95A009B4002 /* Array+SwiftyToolz.swift in Sources */,
+				9697A59923A4E95A009B4002 /* Dictionary+SwiftyToolz.swift in Sources */,
+				9697A5A123A4E95A009B4002 /* ReadableError.swift in Sources */,
+				9697A59823A4E95A009B4002 /* SwiftHelpers.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -211,6 +227,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				ONLY_ACTIVE_ARCH = YES;
 			};
 			name = Debug;
@@ -243,6 +260,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 			};
 			name = Release;
 		};
@@ -304,6 +322,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MARKETING_VERSION = 1.5.5;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.flowtoolz.SwiftyToolz;
@@ -371,6 +390,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MARKETING_VERSION = 1.5.5;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.flowtoolz.SwiftyToolz;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
