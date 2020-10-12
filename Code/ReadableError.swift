@@ -1,3 +1,18 @@
+public func log(_ error: Error,
+                title: String? = nil,
+                forUser: Bool = false,
+                filePath: String = #file,
+                function: String = #function,
+                line: Int = #line)
+{
+    log(error: error.readable.message,
+        title: title,
+        forUser: forUser,
+        filePath: filePath,
+        function: function,
+        line: line)
+}
+
 public extension Error
 {
     static func readable(_ text: String) -> ReadableError { .init(text) }
