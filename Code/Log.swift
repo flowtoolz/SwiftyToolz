@@ -68,7 +68,7 @@ public extension Log
                           function: function,
                           line: line)
     
-        print(entry.description + "\n")
+        print(entry.description)
         
         LogObservers.receive(entry)
     }
@@ -135,16 +135,25 @@ public class Log
     {
         public var description: String
         {
-            var prefix = Entry.prefix
+            var result = Entry.prefix
+            if result.count > 0 { result += ": " }
             
-            if level != .info
+            switch level
             {
-                prefix += " " + level.rawValue.uppercased()
+            case .info: result += "ℹ️ "
+            case .warning: result += "⚠️ "
+            case .error: result += "🛑 "
+            case .off: break
             }
             
-            if prefix.count > 0 { prefix += ": " }
+            result += message
             
-            return "\(prefix)\(message)\n    (\(context))"
+            if level.integer >= Level.warning.integer
+            {
+                result += "\n    (\(context))"
+            }
+             
+            return result
         }
         
         public var context: String
