@@ -150,7 +150,7 @@ public class Log
             
             if level.integer >= Level.warning.integer
             {
-                result += "\n    (\(context))"
+                result += "\n(\(context))"
             }
              
             return result
