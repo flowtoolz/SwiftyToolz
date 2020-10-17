@@ -19,7 +19,15 @@ public extension Error
     
     var readable: ReadableError
     {
-        self as? ReadableError ?? .message(self as? String ?? "\(self)")
+        switch self
+        {
+        case let readableError as ReadableError:
+            return readableError
+        case let string as String:
+            return .message(string)
+        default:
+            return .message(ReadableError.readableMessageForError?(self) ?? "\(self)")
+        }
     }
 }
 
@@ -27,6 +35,8 @@ extension String: Error {}
 
 public enum ReadableError: Error, CustomStringConvertible, CustomDebugStringConvertible
 {
+    public static var readableMessageForError: ((Error) -> String)?
+    
     public init(_ text: String) { self = .message(text) }
     
     public var description: String { message }
