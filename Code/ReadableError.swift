@@ -25,10 +25,17 @@ public extension Error
             return readableError
         case let string as String:
             return .message(string)
+        case let convertible as ReadableErrorConvertible:
+            return .message(convertible.readableMessage)
         default:
             return .message(ReadableError.readableMessageForError?(self) ?? "\(self)")
         }
     }
+}
+
+public protocol ReadableErrorConvertible
+{
+    var readableMessage: String { get }
 }
 
 extension String: Error {}
