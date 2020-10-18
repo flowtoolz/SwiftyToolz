@@ -1,4 +1,3 @@
-public typealias JSON = [String : Any]
 public typealias Action = () -> Void
 
 public func address(_ object: AnyObject) -> String
