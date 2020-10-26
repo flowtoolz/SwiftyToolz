@@ -56,8 +56,6 @@ public extension Log
              function: String = #function,
              line: Int = #line)
     {
-        guard level.integer >= minimumLevel.integer else { return }
-        
         let filename = filePath.fileNameFromPath.map(String.init) ?? filePath
         
         let entry = Entry(message: message,
@@ -68,7 +66,7 @@ public extension Log
                           function: function,
                           line: line)
     
-        print(entry.description)
+        if level.integer >= minimumLevel.integer { print(entry.description) }
         
         LogObservers.receive(entry)
     }
