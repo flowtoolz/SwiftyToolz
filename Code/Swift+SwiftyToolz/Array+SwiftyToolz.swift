@@ -71,7 +71,8 @@ public extension Array
     
     func isValid(index: Int?) -> Bool
     {
-        indices.contains(index ?? -1)
+        guard let index = index else { return false }
+        return indices.contains(index)
     }
     
     func at(_ index: Int?) -> Element?
@@ -81,7 +82,7 @@ public extension Array
     }
 }
 
-extension Array where Element: Comparable
+public extension Array where Element: Comparable
 {    
     @discardableResult
     mutating func insertSorted(_ newElement: Element) -> Int
@@ -90,5 +91,11 @@ extension Array where Element: Comparable
         let insertionIndex = firstIndex(where: { $0 > newElement }) ?? count
         insert(newElement, at: insertionIndex)
         return insertionIndex
+    }
+}
+
+public extension Array where Element : Hashable {
+    @inlinable func withoutDuplicates() -> [Element] {
+        Array(Set(self))
     }
 }
