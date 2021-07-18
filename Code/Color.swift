@@ -1,5 +1,11 @@
 public extension Color
 {
+    static var random: Color {
+        .init(.random(in: 0 ... 1.0),
+              .random(in: 0 ... 1.0),
+              .random(in: 0 ... 1.0))
+    }
+    
     static var black: Color { .gray(brightness: 0) }
     static var white: Color { .gray(brightness: 1) }
     static var clear: Color { Color(0.0, 0.0, 0.0, 0.0) }
