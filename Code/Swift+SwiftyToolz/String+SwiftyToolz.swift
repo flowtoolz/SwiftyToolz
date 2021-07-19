@@ -1,5 +1,23 @@
 public extension String
 {
+    static func enumerating(names: [String],
+                            stringForAnd and: String = "and") -> String {
+        var result = ""
+        
+        for index in 0 ..< names.count {
+            if !result.isEmpty {
+                if index == names.count - 1 {
+                    result += " \(and) "
+                } else {
+                    result += ", "
+                }
+            }
+            result += names[index]
+        }
+        
+        return result
+    }
+    
     var fileExtensionFromName: Substring?
     {
         guard let dotIndex = lastIndex(of: ".") else { return nil }
