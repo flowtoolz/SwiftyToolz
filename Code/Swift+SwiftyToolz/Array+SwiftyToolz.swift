@@ -80,22 +80,28 @@ public extension Array
         guard let index = index else { return nil }
         return isValid(index: index) ? self[index] : nil
     }
-}
 
-public extension Array where Element: Comparable
-{    
     @discardableResult
-    mutating func insertSorted(_ newElement: Element) -> Int
+    mutating func insertSorted(_ newElement: Element) -> Int where Element: Comparable
     {
         // TODO: use binary search to improve performance from O(n) to O(log2(n))
         let insertionIndex = firstIndex(where: { $0 > newElement }) ?? count
         insert(newElement, at: insertionIndex)
         return insertionIndex
     }
-}
-
-public extension Array where Element : Hashable {
-    @inlinable func withoutDuplicates() -> [Element] {
+    
+    @inlinable func withoutDuplicates() -> [Element] where Element: Hashable
+    {
         Array(Set(self))
+    }
+    
+    func average() -> Double? where Element: BinaryInteger
+    {
+        isEmpty ? nil : Double(reduce(0, +)) / Double(count)
+    }
+    
+    func average() -> Double?  where Element: BinaryFloatingPoint
+    {
+        isEmpty ? nil : Double(reduce(0, +)) / Double(count)
     }
 }

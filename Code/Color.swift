@@ -1,6 +1,7 @@
 public extension Color
 {
-    static var random: Color {
+    static var random: Color
+    {
         .init(.random(in: 0 ... 1.0),
               .random(in: 0 ... 1.0),
               .random(in: 0 ... 1.0))

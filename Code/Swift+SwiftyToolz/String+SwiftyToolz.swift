@@ -39,7 +39,7 @@ public extension String
         self = string
     }
     
-    static func makeUUID() -> String
+    static func randomID() -> String
     {
         // create random bytes
         
