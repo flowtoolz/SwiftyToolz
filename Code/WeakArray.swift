@@ -33,6 +33,14 @@ public struct WeakArray<Element: AnyObject>: Collection, RangeReplaceableCollect
         return array.remove(at: index).object
     }
     
+    public mutating func replaceSubrange<C>(_ subrange: Range<Self.Index>,
+                                            with newElements: C)
+        where C : Collection, Self.Element == C.Element
+    {
+        array.replaceSubrange(subrange,
+                              with: newElements.map { Weak($0) })
+    }
+    
     public func isValid(index: Int?) -> Bool
     {
         array.isValid(index: index)
