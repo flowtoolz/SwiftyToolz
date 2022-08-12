@@ -1,5 +1,15 @@
 public extension Array
 {
+    static func + (array: Self, element: Element) -> Self
+    {
+        array + [element]
+    }
+    
+    static func + (element: Element, array: Self) -> Self
+    {
+        [element] + array 
+    }
+    
     static func += (array: inout Self, element: Element)
     {
         array.append(element)
