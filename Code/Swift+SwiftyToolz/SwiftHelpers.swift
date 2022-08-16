@@ -12,7 +12,7 @@ public func typeName<T>(_ anything: T) -> String
 
 public func hashValue(_ object: AnyObject) -> HashValue
 {
-    return ObjectIdentifier(object).hashValue
+    ObjectIdentifier(object).hashValue
 }
 
 public typealias HashValue = Int

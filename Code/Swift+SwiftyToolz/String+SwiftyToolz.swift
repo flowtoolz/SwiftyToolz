@@ -39,13 +39,14 @@ public extension String
         self = string
     }
     
+    /// An random String in the UUID format. Not a true UUID but unique enough for practically all use cases.
     static func randomID() -> String
     {
         // create random bytes
         
         var bytes = [Byte]()
         
-        16.times { bytes.append(Byte.random) }
+        16.times { bytes.append(.random) }
         
         // indicate UUID version and variant
         
@@ -66,6 +67,7 @@ public extension String
             }
             
             return string
-        }.joined(separator: "-")
+        }
+        .joined(separator: "-")
     }
 }
