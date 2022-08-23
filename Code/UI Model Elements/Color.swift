@@ -39,14 +39,14 @@ public extension Color
                   Double(a) / 255.0)
     }
     
-    func with(alpha: Double) -> Color
-    {
-        .init(red, green, blue, alpha)
-    }
-    
     static func rgb(_ r: Double, _ g: Double, _ b: Double) -> Color
     {
         self.init(r, g, b, 1.0)
+    }
+    
+    func with(alpha: Double) -> Color
+    {
+        .init(red, green, blue, alpha)
     }
 }
 
