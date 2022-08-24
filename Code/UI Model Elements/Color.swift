@@ -1,7 +1,7 @@
 public enum UXColor
 {
     case rgba(Color)
-    case dynamic(Color, Color)
+    case dynamic(lightMode: Color, darkMode: Color)
     case system(System)
     
     public enum System
