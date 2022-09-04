@@ -1,13 +1,34 @@
 public enum UXColor
 {
     case rgba(Color)
-    case dynamic(lightMode: Color, darkMode: Color)
+    case dynamic(DynamicColor)
     case system(System)
     
     public enum System
     {
-        case text, label, secondaryLabel, red, orange, yellow, green, blue, purple, gray, teal
+        case text, label, secondaryLabel, red, orange, yellow, green, blue, purple, gray, teal, accent
     }
+}
+
+public struct DynamicColor
+{
+    public static func `in`(light: Color,
+                            darkness: Color) -> DynamicColor
+    {
+        .init(lightMode: light, darkMode: darkness)
+    }
+    
+    public func mixed(with portion: Double,
+                      of otherColor: DynamicColor) -> DynamicColor
+    {
+        .init(lightMode: lightMode.mixed(with: portion,
+                                         of: otherColor.lightMode),
+              darkMode: darkMode.mixed(with: portion,
+                                       of: otherColor.darkMode))
+    }
+    
+    public let lightMode: Color
+    public let darkMode: Color
 }
 
 public extension Color
@@ -39,9 +60,24 @@ public extension Color
                   Double(a) / 255.0)
     }
     
+    func mixed(with portion: Double, of otherColor: Color) -> Color
+    {
+        let myPortion = 1.0 - portion
+        
+        return .init(red * myPortion + otherColor.red * portion,
+                     green * myPortion + otherColor.green * portion,
+                     blue * myPortion + otherColor.blue * portion,
+                     alpha * myPortion + otherColor.alpha * portion)
+    }
+    
     static func rgb(_ r: Double, _ g: Double, _ b: Double) -> Color
     {
-        self.init(r, g, b, 1.0)
+        rgba(r, g, b, 1.0)
+    }
+    
+    static func rgba(_ r: Double, _ g: Double, _ b: Double, _ a: Double) -> Color
+    {
+        self.init(r, g, b, a)
     }
     
     func with(alpha: Double) -> Color
