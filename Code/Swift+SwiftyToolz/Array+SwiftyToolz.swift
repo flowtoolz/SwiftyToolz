@@ -81,13 +81,13 @@ public extension Array
     
     func isValid(index: Int?) -> Bool
     {
-        guard let index = index else { return false }
+        guard let index else { return false }
         return indices.contains(index)
     }
     
     func at(_ index: Int?) -> Element?
     {
-        guard let index = index else { return nil }
+        guard let index else { return nil }
         return isValid(index: index) ? self[index] : nil
     }
 
