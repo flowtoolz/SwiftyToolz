@@ -92,12 +92,45 @@ public extension Array
     }
 
     @discardableResult
+    
     mutating func insertSorted(_ newElement: Element) -> Int where Element: Comparable
     {
-        // TODO: use binary search to improve performance from O(n) to O(log2(n))
-        let insertionIndex = firstIndex(where: { $0 > newElement }) ?? count
+        let insertionIndex = insertionIndexAssumingIsSorted(for: newElement)
         insert(newElement, at: insertionIndex)
         return insertionIndex
+    }
+    
+    // TODO: This should have multiple unit tests. It gives the last possible insertion index that would keep the array sorted after the considered insertion
+    func insertionIndexAssumingIsSorted(for element: Element) -> Int where Element: Comparable
+    {
+        if element < self[0] { return 0 }
+        if self[count - 1] <= element { return count }
+        
+        var lowestIndex = 0
+        var highestIndex = count - 1
+
+        var pivotIndex = 0
+
+        while lowestIndex < highestIndex
+        {
+            pivotIndex = (lowestIndex + highestIndex) / 2
+            
+            if self[pivotIndex] <= element, element < self[pivotIndex + 1]
+            {
+                return pivotIndex + 1
+            }
+            
+            if element < self[pivotIndex]
+            {
+                highestIndex = pivotIndex
+            }
+            else
+            {
+                lowestIndex = pivotIndex + 1
+            }
+        }
+        
+        return pivotIndex
     }
     
     @inlinable func withoutDuplicates() -> [Element] where Element: Hashable
