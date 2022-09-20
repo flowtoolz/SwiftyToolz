@@ -92,7 +92,6 @@ public extension Array
     }
 
     @discardableResult
-    
     mutating func insertSorted(_ newElement: Element) -> Int where Element: Comparable
     {
         let insertionIndex = insertionIndexAssumingIsSorted(for: newElement)
@@ -100,9 +99,14 @@ public extension Array
         return insertionIndex
     }
     
-    // TODO: This should have multiple unit tests. It gives the last possible insertion index that would keep the array sorted after the considered insertion
+    /**
+     Returns the last possible insertion index that would keep the array sorted after the considered insertion
+     
+     Assumes the array is already sorted, and therefor is in O(log(n)).
+     */
     func insertionIndexAssumingIsSorted(for element: Element) -> Int where Element: Comparable
     {
+        if isEmpty { return 0 }
         if element < self[0] { return 0 }
         if self[count - 1] <= element { return count }
         
