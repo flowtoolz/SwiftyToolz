@@ -1,11 +1,11 @@
-public func log(_ error: Error,
+public func log(_ error: ReadableError,
                 title: String? = nil,
                 forUser: Bool = false,
                 filePath: String = #file,
                 function: String = #function,
                 line: Int = #line)
 {
-    log(error: error.readable.message,
+    log(error: error.message,
         title: title,
         forUser: forUser,
         filePath: filePath,
