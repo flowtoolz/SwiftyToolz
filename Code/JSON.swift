@@ -93,7 +93,7 @@ extension JSON
 
 /// JSON with Dynamic Lookup of Dictionary Elements
 @dynamicMemberLookup
-public enum JSON
+public enum JSON: Equatable
 {
     public subscript(dynamicMember member: String) -> JSON?
     {
