@@ -10,30 +10,13 @@ public extension Dictionary
     
     // MARK: - Merge Dictionaries
     
-    static func + <KeyType, ValueType> (left: [KeyType : ValueType],
-                                        right: [KeyType : ValueType]) -> [KeyType : ValueType]
+    static func + (left: [Key: Value], right: [Key: Value]) -> [Key: Value]
     {
-        var result = [KeyType : ValueType]()
-        
-        for (key, value) in left
-        {
-            result[key] = value
-        }
-        
-        for (key, value) in right
-        {
-            result[key] = value
-        }
-        
-        return result
+        left.merging(right) { left, _ in left }
     }
     
-    static func += <KeyType, ValueType> (left: inout [KeyType : ValueType],
-                                         right: [KeyType : ValueType])
+    static func += (left: inout [Key: Value], right: [Key: Value])
     {
-        for (key, value) in right
-        {
-            left[key] = value
-        }
+        left.merge(right) { $1 }
     }
 }
