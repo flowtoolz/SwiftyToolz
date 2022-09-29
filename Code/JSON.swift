@@ -37,10 +37,10 @@ extension JSON
         return array
     }
     
-    public func dictionary(_ field: String? = nil) throws -> [String: JSON]
+    public func object(_ field: String? = nil) throws -> [String: JSON]
     {
-        if let field { return try at(field).dictionary() }
-        guard case .dictionary(let dict) = self else { throw "JSON is not a Dictionary" }
+        if let field { return try at(field).object() }
+        guard case .object(let dict) = self else { throw "JSON is not a Dictionary" }
         return dict
     }
     
@@ -48,36 +48,31 @@ extension JSON
     
     public subscript(index: Int) -> JSON?
     {
-        guard case .array(let array) = self else { return nil }
-        return array.indices.contains(index) ? array[index] : nil
+        try? at(index)
     }
     
-    public func at(_ index: Int) throws -> JSON
+    public func at(_ index: Int) throws -> JSON?
     {
         guard case .array(let array) = self else
         {
             throw "JSON is not an array"
         }
         
-        guard array.indices.contains(index) else
-        {
-            throw "JSON array contains no index \(index)"
-        }
-        
-        return array[index]
+        return array.at(index)
     }
     
     // MARK: - Dictionary Elements
     
     public subscript(key: String) -> JSON?
     {
-        guard case .dictionary(let dictionary) = self else { return nil }
+        guard case .object(let dictionary) = self else { return nil }
         return dictionary[key]
     }
     
+    // TODO: this should rather return nil when it IS an object/dictionary but does NOT contain the key ...
     public func at(_ key: String) throws -> JSON
     {
-        guard case .dictionary(let dictionary) = self else
+        guard case .object(let dictionary) = self else
         {
             throw "JSON is not a dictionary"
         }
@@ -91,13 +86,42 @@ extension JSON
     }
 }
 
-/// JSON with Dynamic Lookup of Dictionary Elements
+public extension JSON
+{
+    /// JSON but restricted to containers
+    enum Container: Equatable
+    {
+        public init(_ json: JSON) throws
+        {
+            switch json
+            {
+            case .object(let dictionary): self = .object(dictionary)
+            case .array(let array): self = .array(array)
+            default: throw "JSON container must be either an array or an object."
+            }
+        }
+        
+        public func json() -> JSON
+        {
+            switch self
+            {
+            case .object(let dictionary): return .object(dictionary)
+            case .array(let array): return .array(array)
+            }
+        }
+        
+        case array([JSON])
+        case object([String: JSON])
+    }
+}
+
+/// JSON with Dynamic Lookup of Dictionary- and Array Elements
 @dynamicMemberLookup
 public enum JSON: Equatable
 {
     public subscript(dynamicMember member: String) -> JSON?
     {
-        guard case .dictionary(let dictionary) = self else { return nil }
+        guard case .object(let dictionary) = self else { return nil }
         return dictionary[member]
     }
     
@@ -106,5 +130,5 @@ public enum JSON: Equatable
     case int(Int)
     case string(String)
     case array([JSON])
-    case dictionary([String: JSON])
+    case object([String: JSON])
 }
