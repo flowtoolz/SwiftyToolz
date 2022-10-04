@@ -86,6 +86,12 @@ extension JSON
     }
 }
 
+public extension JSON.Container
+{
+    static var emptyObject: JSON.Container { .object([:]) }
+    static var emptyArray: JSON.Container { .array([]) }
+}
+
 public extension JSON
 {
     /// JSON but restricted to containers
@@ -113,6 +119,12 @@ public extension JSON
         case array([JSON])
         case object([String: JSON])
     }
+}
+
+public extension JSON
+{
+    static var emptyObject: JSON { .object([:]) }
+    static var emptyArray: JSON { .array([]) }
 }
 
 /// JSON with Dynamic Lookup of Dictionary- and Array Elements
