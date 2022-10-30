@@ -1,44 +1,69 @@
-public struct Frame: Equatable
+import simd
+
+public struct Rectangle: Equatable
 {
-    public static var zero: Frame { .init(centerX: 0, centerY: 0, width: 0, height: 0) }
+    // MARK: - Convenience Getters
     
-    public init(centerX: Double, centerY: Double, width: Double, height: Double)
+    public var maxX: Double { x + width }
+    public var maxY: Double { y + height }
+    
+    public var midX: Double { centerX }
+    public var midY: Double { centerY }
+    
+    public var center: Point { Point(centerX, centerY) }
+    public var centerX: Double { x + (width / 2) }
+    public var centerY: Double { y + (height / 2) }
+    
+    // MARK: - Initializers
+    
+    public init(center: Point, size: Size)
     {
-        self.centerX = centerX
-        self.centerY = centerY
-        self.width = width
-        self.height = height
+        self.init(position: Point(center.x - (size.width / 2),
+                                  center.y - (size.height / 2)),
+                  size: size)
     }
     
-    public init(x: Double, y: Double, width: Double, height: Double)
+    public static var zero: Rectangle { Rectangle() }
+    
+    public init(position: Point = .zero, size: Size = .zero)
     {
-        self.centerX = x + width / 2
-        self.centerY = y + height / 2
-        self.width = width
-        self.height = height
+        self.position = position
+        self.size = size
     }
     
-    public var x: Double { centerX - width / 2 }
-    public var y: Double { centerY - height / 2 }
+    // MARK: - Position
     
-    public var maxX: Double { centerX + width / 2 }
-    public var maxY: Double { centerY + height / 2 }
+    public var minX: Double { x }
+    public var minY: Double { y }
     
-    public let centerX: Double
-    public let centerY: Double
-    public let width: Double
-    public let height: Double
+    public var x: Double { position.x }
+    public var y: Double { position.y }
+    
+    public let position: Point
+    
+    // MARK: - Size
+    
+    public var surface: Double { size.surface }
+    
+    public var width: Double { size.width }
+    public var height: Double { size.height }
+    
+    public let size: Size
 }
 
-public struct Point
+public extension Size
 {
-    public static let zero = Point(0, 0)
-    
-    public init(_ x: Double, _ y: Double)
+    init(width: Double, height: Double)
     {
-        self.x = x
-        self.y = y
+        self.init(width, height)
     }
     
-    public let x, y: Double
+    var surface: Double { width * height }
+    
+    var width: Double { x }
+    var height: Double { y }
 }
+
+public typealias Size = Vector2D
+public typealias Point = Vector2D
+public typealias Vector2D = SIMD2<Double>
