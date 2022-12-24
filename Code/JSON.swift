@@ -95,7 +95,7 @@ public extension JSON.Container
 public extension JSON
 {
     /// JSON but restricted to containers
-    enum Container: Equatable
+    enum Container: Equatable, Sendable
     {
         public init(_ json: JSON) throws
         {
@@ -129,7 +129,7 @@ public extension JSON
 
 /// JSON with Dynamic Lookup of Dictionary- and Array Elements
 @dynamicMemberLookup
-public enum JSON: Equatable
+public enum JSON: Equatable, Sendable
 {
     public subscript(dynamicMember member: String) -> JSON?
     {
