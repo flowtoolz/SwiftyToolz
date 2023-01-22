@@ -7,5 +7,5 @@
         try await body()
     }
     
-    public static var shared = BackgroundActor()
+    public static let shared = BackgroundActor()
 }
