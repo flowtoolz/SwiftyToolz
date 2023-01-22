@@ -25,10 +25,14 @@ public extension Error
             return readableError
         case let string as String:
             return ReadableError(string)
-        case let convertible as ReadableErrorConvertible:
-            return ReadableError(convertible.readableErrorMessage)
+        case let readableErrorConvertible as ReadableErrorConvertible:
+            return ReadableError(readableErrorConvertible.readableErrorMessage)
+        case let customDebugStringConvertible as CustomDebugStringConvertible:
+            return ReadableError(customDebugStringConvertible.debugDescription)
+        case let customStringConvertible as CustomStringConvertible:
+            return ReadableError(customStringConvertible.description)
         default:
-            log(warning: "Could not retrieve readable message from Error")
+            log(warning: "Could not retrieve proper readable message from Error of type \(typeName(self))")
             return ReadableError("\(self)")
         }
     }
