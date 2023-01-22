@@ -15,7 +15,7 @@ public func log(_ error: ReadableError,
 
 public extension Error
 {
-    static func readable(_ text: String) -> ReadableError { .init(text) }
+    static func readable(_ message: String) -> ReadableError { .init(message) }
     
     var readable: ReadableError
     {
@@ -24,11 +24,12 @@ public extension Error
         case let readableError as ReadableError:
             return readableError
         case let string as String:
-            return .message(string)
+            return ReadableError(string)
         case let convertible as ReadableErrorConvertible:
-            return .message(convertible.readableErrorMessage)
+            return ReadableError(convertible.readableErrorMessage)
         default:
-            return .message(ReadableError.readableMessageForError?(self) ?? "\(self)")
+            log(warning: "Could not retrieve readable message from Error")
+            return ReadableError("\(self)")
         }
     }
 }
@@ -40,20 +41,13 @@ public protocol ReadableErrorConvertible
 
 extension String: Error {}
 
-public enum ReadableError: Error, CustomStringConvertible, CustomDebugStringConvertible
+public struct ReadableError: Error, CustomStringConvertible, CustomDebugStringConvertible
 {
-    public static var readableMessageForError: ((Error) -> String)?
-    
-    public init(_ text: String) { self = .message(text) }
+    public init(_ message: String) { self.message = message }
     
     public var description: String { message }
     
     public var debugDescription: String { message }
-    
-    public var message: String
-    {
-        switch self { case .message(let text): return text }
-    }
-    
-    case message(_ text: String)
+
+    public let message: String
 }
