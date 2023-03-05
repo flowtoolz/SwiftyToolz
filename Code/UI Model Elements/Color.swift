@@ -46,9 +46,16 @@ public extension Color
         rgb(.random(in: 0 ... 1.0), .random(in: 0 ... 1.0), .random(in: 0 ... 1.0))
     }
     
-    static var clear: Color { .black.with(alpha: 0) }
-    static var black: Color { .gray(brightness: 0) }
-    static var white: Color { .gray(brightness: 1) }
+    static var clear: Color { .rgba(0, 0, 0, 0) }
+    static var black: Color { .rgb(0, 0, 0) }
+    static var white: Color { .rgb(1, 1, 1) }
+    static var gray: Color { .rgb(0.5, 0.5, 0.5) }
+    static var red: Color { .rgb(1, 0, 0) }
+    static var green: Color { .rgb(0, 1, 0) }
+    static var blue: Color { .rgb(0, 0, 1) }
+    static var cyan: Color { .rgb(0, 1, 1) }
+    static var magenta: Color { .rgb(1, 0, 1) }
+    static var yellow: Color { .rgb(1, 1, 0) }
 
     static func gray(brightness: Double) -> Color
     {
