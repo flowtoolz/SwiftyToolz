@@ -2,12 +2,12 @@ public enum UXColor
 {
     case rgba(Color)
     case dynamic(DynamicColor)
-    case system(System)
-    
-    public enum System
-    {
-        case text, label, secondaryLabel, red, orange, yellow, green, blue, purple, gray, teal, accent
-    }
+    case system(SystemColor)
+}
+
+public enum SystemColor
+{
+    case text, label, secondaryLabel, red, orange, yellow, green, blue, purple, gray, teal, accent
 }
 
 public struct DynamicColor
