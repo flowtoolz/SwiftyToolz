@@ -19,6 +19,14 @@ public struct DynamicColor
     }
     
     public func mixed(with portion: Double,
+                      of otherColor: Color) -> DynamicColor
+    {
+        mixed(with: portion,
+              of: .in(light: otherColor,
+                      darkness: otherColor))
+    }
+    
+    public func mixed(with portion: Double,
                       of otherColor: DynamicColor) -> DynamicColor
     {
         .init(lightMode: lightMode.mixed(with: portion,
