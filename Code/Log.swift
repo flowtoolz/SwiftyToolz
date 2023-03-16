@@ -66,17 +66,19 @@ public extension Log
                           function: function,
                           line: line)
     
-        if level.integer >= minimumLevel.integer { print(entry.description) }
+        if level >= minimumPrintLevel { print(entry.description) }
         
         LogObservers.receive(entry)
     }
     
-    func add(observer: LogObserver)
+    func add(observer: AnyObject,
+             receiveEntry: @escaping (Log.Entry) -> Void)
     {
-        LogObservers.add(observer)
+        LogObservers.add(observer,
+                         receiveEntry: receiveEntry)
     }
     
-    func remove(observer: LogObserver)
+    func remove(observer: AnyObject)
     {
         LogObservers.remove(observer)
     }
@@ -84,40 +86,31 @@ public extension Log
 
 private struct LogObservers
 {
-    static func add(_ observer: LogObserver)
+    static func add(_ observer: AnyObject,
+                    receiveEntry: @escaping (Log.Entry) -> Void)
     {
-        observers[observer.key] = WeakObserver(observer: observer)
+        observers[ObjectIdentifier(observer)] = WeakObserver(observer: observer,
+                                                             receiveEntry: receiveEntry)
     }
     
-    static func remove(_ observer: LogObserver)
+    static func remove(_ observer: AnyObject)
     {
-        observers[observer.key] = nil
+        observers[ObjectIdentifier(observer)] = nil
     }
     
     static func receive(_ entry: Log.Entry)
     {
         observers.remove { $0.observer == nil }
-        observers.values.forEach { $0.observer?.receive(entry) }
+        observers.values.forEach { $0.receiveEntry(entry) }
     }
     
-    static var observers = [LogObserver.Key : WeakObserver]()
+    static var observers = [ObjectIdentifier : WeakObserver]()
     
     struct WeakObserver
     {
-        weak var observer: LogObserver?
+        weak var observer: AnyObject?
+        let receiveEntry: (Log.Entry) -> Void
     }
-}
-
-extension LogObserver
-{
-    var key: Key { Key(self) }
-    typealias Key = ObjectIdentifier
-}
-
-// TODO: why force the log observer to adopt a protocol, isn't it enought to require it's a class object? -> store receive closure in WeakObserver ...
-public protocol LogObserver: AnyObject
-{
-    func receive(_ entry: Log.Entry)
 }
 
 public class Log
@@ -129,24 +122,28 @@ public class Log
     
     // MARK: - Entry
     
-    public struct Entry: Codable, Equatable
+    public struct Entry: Codable, Equatable, Sendable, Identifiable, Comparable
     {
+        public static func < (lhs: Entry, rhs: Entry) -> Bool
+        {
+            lhs.id < rhs.id
+        }
+        
         public var description: String
         {
-            var result = Entry.prefix
-            if result.count > 0 { result += ": " }
+            var result = ""
             
             switch level
             {
+            case .verbose: break
             case .info: result += "ℹ️ "
             case .warning: result += "⚠️ "
             case .error: result += "🛑 "
-            case .off: break
             }
             
             result += message
             
-            if level.integer >= Level.warning.integer
+            if level >= Level.warning
             {
                 result += "\n(\(context))"
             }
@@ -166,26 +163,28 @@ public class Log
         public var fileName = ""
         public var function = ""
         public var line = 0
-        public static var prefix = ""
+        
+        public var id: Int =
+        {
+            let newID = nextID
+            nextID += 1
+            return newID
+        }()
+        
+        private static var nextID = 0
     }
     
     // MARK: - Levels
     
-    public var minimumLevel: Level = .info
+    public var minimumPrintLevel: Level = .info
     
-    public enum Level: String, Codable, Equatable
+    public enum Level: Int, Codable, Equatable, Comparable, Sendable
     {
-        var integer: Int
+        public static func < (lhs: Level, rhs: Level) -> Bool
         {
-            switch self
-            {
-            case .info: return 0
-            case .warning: return 1
-            case .error: return 2
-            case .off: return 3
-            }
+            lhs.rawValue < rhs.rawValue
         }
         
-        case info, warning, error, off
+        case verbose, info, warning, error
     }
 }
