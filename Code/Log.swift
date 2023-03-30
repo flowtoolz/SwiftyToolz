@@ -46,6 +46,22 @@ public func log(_ message: String = "",
                    line: line)
 }
 
+public func log(verbose message: String = "",
+                title: String? = nil,
+                forUser: Bool = false,
+                filePath: String = #file,
+                function: String = #function,
+                line: Int = #line)
+{
+    Log.shared.log(message: message,
+                   title: title,
+                   level: .verbose,
+                   forUser: forUser,
+                   filePath: filePath,
+                   function: function,
+                   line: line)
+}
+
 public extension Log
 {
     func log(message: String,
@@ -178,8 +194,21 @@ public class Log
     
     public var minimumPrintLevel: Level = .info
     
-    public enum Level: Int, Codable, Equatable, Comparable, Sendable
+    public enum Level: Int, Codable, Equatable, Comparable, Sendable, CaseIterable, Identifiable
     {
+        public var displayName: String
+        {
+            switch self
+            {
+            case .verbose: return "Verbose"
+            case .info: return "Info"
+            case .warning: return "Warning"
+            case .error: return "Error"
+            }
+        }
+        
+        public var id: Int { rawValue }
+        
         public static func < (lhs: Level, rhs: Level) -> Bool
         {
             lhs.rawValue < rhs.rawValue
