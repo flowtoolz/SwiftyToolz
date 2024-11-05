@@ -1,7 +1,7 @@
-@available(macOS 14.0, iOS 16.0, *)
+@available(macOS 10.15, iOS 13.0, *)
 public func withTimeout<Result>
 (
-    after duration: Duration,
+    afterSeconds seconds: Double,
     startLongOperation: @escaping () async throws -> Result
 )
 async throws -> Result
@@ -17,8 +17,9 @@ async throws -> Result
         
         tasks.addTask
         {
-            try await Task.sleep(for: duration)
-            throw TimeoutError(duration: duration)
+            // TODO: use type Duration and Task.sleep(for: duration) as soon as we can require Ventura-level OS
+            try await Task.sleep(nanoseconds: UInt64(seconds * 1_000_000_000))
+            throw TimeoutError(seconds: seconds)
         }
         
         guard let result = try await tasks.next() else
@@ -32,8 +33,7 @@ async throws -> Result
     }
 }
 
-@available(macOS 13.0, iOS 16.0, *)
 public struct TimeoutError: Error
 {
-    public let duration: Duration
+    public let seconds: Double
 }

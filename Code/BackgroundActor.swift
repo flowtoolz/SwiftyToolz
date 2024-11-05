@@ -1,4 +1,3 @@
-@available(iOS 13.0.0, macOS 10.15.0, tvOS 13.0.0, watchOS 6.0.0, *)
 @globalActor public actor BackgroundActor
 {
     /// Execute the given closure on this actor
