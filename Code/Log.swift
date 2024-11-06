@@ -120,7 +120,7 @@ private struct LogObservers
         observers.values.forEach { $0.receiveEntry(entry) }
     }
     
-    static var observers = [ObjectIdentifier : WeakObserver]()
+    nonisolated(unsafe) static var observers = [ObjectIdentifier : WeakObserver]()
     
     struct WeakObserver
     {
@@ -133,7 +133,7 @@ public class Log
 {
     // MARK: - Singleton Access
     
-    public static let shared = Log()
+    nonisolated(unsafe) public static let shared = Log()
     private init() {}
     
     // MARK: - Entry
@@ -187,7 +187,7 @@ public class Log
             return newID
         }()
         
-        private static var nextID = 0
+        nonisolated(unsafe) private static var nextID = 0
     }
     
     // MARK: - Levels

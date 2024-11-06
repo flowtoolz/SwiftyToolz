@@ -6,7 +6,7 @@ public struct BuildEnvironment
         set { prefersOfflineDevelopment = newValue }
     }
     
-    private static var prefersOfflineDevelopment = false
+    nonisolated(unsafe) private static var prefersOfflineDevelopment = false
     
     public static var isSimulator: Bool
     {

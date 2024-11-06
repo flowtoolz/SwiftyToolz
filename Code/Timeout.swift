@@ -1,8 +1,8 @@
 @available(macOS 10.15, iOS 13.0, watchOS 6.0, tvOS 13.0, *)
-public func withTimeout<Result>
+public func withTimeout<Result: Sendable>
 (
     afterSeconds seconds: Double,
-    startLongOperation: @escaping () async throws -> Result
+    startLongOperation: @escaping @Sendable () async throws -> Result
 )
 async throws -> Result
 {
