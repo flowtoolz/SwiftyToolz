@@ -1,3 +1,4 @@
+@available(macOS 10.15, iOS 13.0, watchOS 6.0, tvOS 13.0, *)
 public func log(error: String,
                 title: String? = nil,
                 forUser: Bool = false,
@@ -14,6 +15,7 @@ public func log(error: String,
                    line: line)
 }
 
+@available(macOS 10.15, iOS 13.0, watchOS 6.0, tvOS 13.0, *)
 public func log(warning: String,
                 title: String? = nil,
                 forUser: Bool = false,
@@ -30,6 +32,7 @@ public func log(warning: String,
                    line: line)
 }
 
+@available(macOS 10.15, iOS 13.0, watchOS 6.0, tvOS 13.0, *)
 public func log(_ message: String = "",
                 title: String? = nil,
                 forUser: Bool = false,
@@ -46,12 +49,13 @@ public func log(_ message: String = "",
                    line: line)
 }
 
-public func log(verbose message: String = "",
-                title: String? = nil,
-                forUser: Bool = false,
-                filePath: String = #file,
-                function: String = #function,
-                line: Int = #line)
+@available(macOS 10.15, iOS 13.0, watchOS 6.0, tvOS 13.0, *)
+nonisolated public func log(verbose message: String = "",
+                            title: String? = nil,
+                            forUser: Bool = false,
+                            filePath: String = #file,
+                            function: String = #function,
+                            line: Int = #line)
 {
     Log.shared.log(message: message,
                    title: title,
@@ -62,15 +66,16 @@ public func log(verbose message: String = "",
                    line: line)
 }
 
+@available(macOS 10.15, iOS 13.0, watchOS 6.0, tvOS 13.0, *)
 public extension Log
 {
-    func log(message: String,
-             title: String? = nil,
-             level: Level = .info,
-             forUser: Bool = false,
-             filePath: String = #file,
-             function: String = #function,
-             line: Int = #line)
+    nonisolated func log(message: String,
+                         title: String? = nil,
+                         level: Level = .info,
+                         forUser: Bool = false,
+                         filePath: String = #file,
+                         function: String = #function,
+                         line: Int = #line)
     {
         let filename = filePath.fileNameFromPath.map(String.init) ?? filePath
         
@@ -81,59 +86,63 @@ public extension Log
                           fileName: filename,
                           function: function,
                           line: line)
-    
-        if level >= minimumPrintLevel { print(entry.description) }
         
-        LogObservers.receive(entry)
+        Task {
+            await log(entry)
+        }
     }
     
     func add(observer: AnyObject,
              receiveEntry: @escaping (Log.Entry) -> Void)
     {
-        LogObservers.add(observer,
-                         receiveEntry: receiveEntry)
+        add(observer, receiveEntry: receiveEntry)
     }
     
     func remove(observer: AnyObject)
     {
-        LogObservers.remove(observer)
+        remove(observer)
     }
 }
 
-private struct LogObservers
+public actor Log
 {
-    static func add(_ observer: AnyObject,
-                    receiveEntry: @escaping (Log.Entry) -> Void)
+    fileprivate func log(_ entry: Entry) {
+        if entry.level >= minimumPrintLevel { print(entry.description) }
+        
+        receive(entry)
+    }
+    
+    // MARK: - Observers
+    
+    fileprivate func add(_ observer: AnyObject,
+                         receiveEntry: @escaping (Log.Entry) -> Void)
     {
         observers[ObjectIdentifier(observer)] = WeakObserver(observer: observer,
                                                              receiveEntry: receiveEntry)
     }
     
-    static func remove(_ observer: AnyObject)
+    fileprivate func remove(_ observer: AnyObject)
     {
         observers[ObjectIdentifier(observer)] = nil
     }
     
-    static func receive(_ entry: Log.Entry)
+    fileprivate func receive(_ entry: Log.Entry)
     {
         observers.remove { $0.observer == nil }
         observers.values.forEach { $0.receiveEntry(entry) }
     }
     
-    nonisolated(unsafe) static var observers = [ObjectIdentifier : WeakObserver]()
+    fileprivate var observers = [ObjectIdentifier : WeakObserver]()
     
     struct WeakObserver
     {
         weak var observer: AnyObject?
         let receiveEntry: (Log.Entry) -> Void
     }
-}
-
-public class Log
-{
+    
     // MARK: - Singleton Access
     
-    nonisolated(unsafe) public static let shared = Log()
+    public static let shared = Log()
     private init() {}
     
     // MARK: - Entry
@@ -163,7 +172,7 @@ public class Log
             {
                 result += "\n(\(context))"
             }
-             
+            
             return result
         }
         
@@ -182,13 +191,13 @@ public class Log
         
         public var id: Int =
         {
-            let newID = nextID
-            nextID += 1
+            let newID = nextEntryID
+            nextEntryID += 1
             return newID
         }()
-        
-        nonisolated(unsafe) private static var nextID = 0
     }
+    
+    private static var nextEntryID = 0
     
     // MARK: - Levels
     

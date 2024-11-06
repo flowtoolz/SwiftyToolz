@@ -1,3 +1,4 @@
+@available(macOS 10.15, iOS 13.0, watchOS 6.0, tvOS 13.0, *)
 public func log(_ error: ReadableError,
                 title: String? = nil,
                 forUser: Bool = false,
@@ -17,6 +18,7 @@ public extension Error
 {
     static func readable(_ message: String) -> ReadableError { .init(message) }
     
+    @available(macOS 10.15, iOS 13.0, watchOS 6.0, tvOS 13.0, *)
     var readable: ReadableError
     {
         switch self
