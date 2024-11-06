@@ -1,13 +1,5 @@
 public struct BuildEnvironment
 {
-    public static var isOfflineDevelopment: Bool
-    {
-        get { isDebugConfiguration ? prefersOfflineDevelopment : false }
-        set { prefersOfflineDevelopment = newValue }
-    }
-    
-    nonisolated(unsafe) private static var prefersOfflineDevelopment = false
-    
     public static var isSimulator: Bool
     {
         #if targetEnvironment(simulator)
