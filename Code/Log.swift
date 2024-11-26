@@ -104,10 +104,28 @@ public extension Log
     }
 }
 
+#if canImport(os)
+import os
+#endif
+
 public actor Log
 {
     fileprivate func log(_ entry: Entry) {
-        if entry.level >= minimumPrintLevel { print(entry.description) }
+        if entry.level >= minimumPrintLevel {
+            #if !canImport(os)
+            print(entry.description)
+            #elseif os(macOS)
+            if #available(macOS 10.14, *) {
+                // TODO: select correct log level
+                os_log(.debug, "entry.description")
+            } else {
+                print(entry.description)
+            }
+            #else
+            // TODO: select correct log level
+            os_log(.debug, "entry.description")
+            #endif
+        }
         
         receive(entry)
     }
